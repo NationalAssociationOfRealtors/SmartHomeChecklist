@@ -16,14 +16,12 @@ const ProductUtils = {
   },
 
   fetch() {
-    const self = this;
-
     return new Promise((resolve, reject) => {
       Papa.parse('https://raw.githubusercontent.com/NationalAssociationOfRealtors/SmartHomeChecklist/master/sample-products.csv', {
         download: true,
         header: true,
         complete: (results, file) => {
-          resolve(self.transform(results.data));
+          resolve(this.transform(results.data));
         },
         error: (error, file) => {
           reject(Error(error))
@@ -33,14 +31,22 @@ const ProductUtils = {
   },
 
   transform(data) {
-    let products = {};
-    
-    // Create hash of products by id ('hash' property)
+    let byId = {};
+    let byGroup = {};
+
     data.forEach(row => {
-      products[row.hash] = _.omit(row, ['hash'])
+      // Create hash of product ids
+      byId[row.hash] = _.omit(row, ['hash'])
+
+      // Create hash of groups
+      byGroup[row.device_class] = byGroup[row.device_class] || []
+      byGroup[row.device_class].push(row.hash)
     });
 
-    return products;
+    return {
+      byId: byId,
+      byGroup: byGroup
+    };
   }
 }
 

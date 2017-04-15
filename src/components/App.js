@@ -11,8 +11,6 @@ class App extends Component {
       properties: null,
       products: null
     };
-
-    this.handleCreateProperty = this.handleCreateProperty.bind(this);
   }
 
   componentWillMount() {
@@ -39,7 +37,20 @@ class App extends Component {
       PropertyUtils.setToStorage(properties);
 
       return {properties: properties};
-    })
+    });
+  }
+
+  handleAddProduct(propertyId, productId) {
+    this.setState((state, props) => {
+      const {properties} = state;
+
+      // Add product to property checklist
+      properties[propertyId].products.push(productId);
+
+      PropertyUtils.setToStorage(properties);
+
+      return {properties: properties}
+    });
   }
 
   render() {
@@ -49,7 +60,8 @@ class App extends Component {
           products: this.state.products,
           properties: this.state.properties,
           methods: {
-            handleCreateProperty: this.handleCreateProperty
+            handleCreateProperty: this.handleCreateProperty.bind(this),
+            handleAddProduct: this.handleAddProduct.bind(this)
           }
         })
       });

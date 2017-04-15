@@ -10,9 +10,6 @@ class Home extends Component {
     this.state = {
       propertyName: ''
     };
-
-    this.handlePropertyNameChange = this.handlePropertyNameChange.bind(this);
-    this.handlePropertyFormSubmit = this.handlePropertyFormSubmit.bind(this);
   }
 
   handlePropertyNameChange(event) {
@@ -29,21 +26,19 @@ class Home extends Component {
 
     return (
       <div>
-        Welcome! <Link to={`/page`}>Go to page</Link>
-
         {_.keys(properties).map(id => {
-            return (
-              <div key={id}>
-                {properties[id].name}
-              </div>
-            );
+          return (
+            <div key={id}>
+              <Link to={`/property/${id}`}>{properties[id].name}</Link>
+            </div>
+          );
         })}
 
-        <form onSubmit={this.handlePropertyFormSubmit}>
+        <form onSubmit={(e) => this.handlePropertyFormSubmit(e)}>
           <input type="text"
             value={this.state.propertyName} 
             placeholder="Property Name"
-            onChange={this.handlePropertyNameChange}
+            onChange={(e) => this.handlePropertyNameChange(e)}
             required  
           />
 
