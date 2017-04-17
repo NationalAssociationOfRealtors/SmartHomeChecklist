@@ -21,12 +21,18 @@ class App extends Component {
     this.setState({products: ProductUtils.getFromStorage()});
     
     // Fetch new products from remote csv
+    this.fetchProperties()
+
+    // Poll for new products every 5 minutes
+    setInterval(() => this.fetchProperties(), 1000*60*5)
+  }
+
+  fetchProperties() {
+    // Fetch new products from remote csv
     ProductUtils.fetch().then(products => {
       ProductUtils.setToStorage(products)
 
       this.setState({products: products})
-    }).catch(error => {
-      alert("Oops! There was an error loading the application.")
     })
   }
 
