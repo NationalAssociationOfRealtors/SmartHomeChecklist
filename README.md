@@ -11,10 +11,10 @@ yarn install
 
 Run the app in development mode:
 ```
-yarn start
+REACT_APP_BASE_URL=http://localhost:3000 yarn start
 ```
 
 Build the app for production to the build folder:
 ```
-yarn build
+REACT_APP_BASE_URL=https://DOMAIN.COM yarn build
 ```

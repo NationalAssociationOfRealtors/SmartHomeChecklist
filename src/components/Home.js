@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import _ from 'lodash';
+import PropertyUtils from '../utils/PropertyUtils'
 
 class Home extends Component {
 
@@ -17,8 +18,9 @@ class Home extends Component {
   }
 
   handlePropertyFormSubmit(event) {
-    event.preventDefault();
-    this.props.methods.handleCreateProperty({name: this.state.propertyName})
+    event.preventDefault(); 
+    
+    this.props.methods.createProperty(PropertyUtils.newProperty(this.state.propertyNames))
   }
 
   render() {    

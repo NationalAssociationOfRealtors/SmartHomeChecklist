@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class PropertyProductGroup extends Component {
   handleAddProduct(productId) {
-    this.props.methods.handleAddProduct(this.props.propertyId, productId)
+    this.props.methods.addProduct(this.props.propertyId, productId)
   }
 
   render() {

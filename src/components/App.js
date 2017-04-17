@@ -30,23 +30,28 @@ class App extends Component {
     })
   }
 
-  handleCreateProperty(newProperty) {
-    this.setState((state, props) => {
-      const properties = PropertyUtils.createProperty(state.properties, newProperty);
+  createProperty(property, callback) {
+    this.setState((state, props) => {      
+      const {properties} = state;
 
+      // Add new property to user's properties
+      properties[property.id] = _.omit(property, ['id'])
+
+      // Save to localStorage
       PropertyUtils.setToStorage(properties);
 
       return {properties: properties};
-    });
+    }, callback);
   }
 
-  handleAddProduct(propertyId, productId) {
+  addProduct(propertyId, productId) {
     this.setState((state, props) => {
       const {properties} = state;
 
       // Add product to property checklist
       properties[propertyId].products.push(productId);
 
+      // Save to localStorage
       PropertyUtils.setToStorage(properties);
 
       return {properties: properties}
@@ -60,8 +65,8 @@ class App extends Component {
           products: this.state.products,
           properties: this.state.properties,
           methods: {
-            handleCreateProperty: this.handleCreateProperty.bind(this),
-            handleAddProduct: this.handleAddProduct.bind(this)
+            createProperty: this.createProperty.bind(this),
+            addProduct: this.addProduct.bind(this)
           }
         })
       });

@@ -13,17 +13,17 @@ const PropertyUtils = {
   setToStorage(properties) {
     localStorage.setObject('properties', properties);
   },
-   
-  createProperty(properties, newProperty) {
+  
+  newProperty(name, products = []) {
+    const id = guid();
+
     const property = {
-      name: newProperty.name,
-      products: newProperty.products || []
+      id,
+      name,
+      products
     };
 
-    // Create id for property
-    properties[guid()] = property;
-
-    return properties;
+    return property;
   }
 }
 

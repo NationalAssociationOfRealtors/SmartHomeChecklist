@@ -23,7 +23,7 @@ class PropertyWrapper extends Component {
     } else {
       return (
         <div>
-          Could not load products
+          Loading... make sure your device is connected to the internet.
         </div>
       );
     }
