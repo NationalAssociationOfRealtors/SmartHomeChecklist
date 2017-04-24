@@ -20,7 +20,7 @@ class Home extends Component {
   handlePropertyFormSubmit(event) {
     event.preventDefault(); 
     
-    this.props.methods.createProperty(PropertyUtils.newProperty(this.state.propertyNames))
+    this.props.methods.createProperty(PropertyUtils.newProperty(this.state.propertyName))
   }
 
   render() {    

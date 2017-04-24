@@ -50,6 +50,20 @@ class App extends Component {
     }, callback);
   }
 
+  deleteProperty(id) {
+    this.setState((state, props) => {      
+      let {properties} = state;
+
+      // Remove property
+      properties = _.omit(properties, [id])
+
+      // Save to localStorage
+      PropertyUtils.setToStorage(properties);
+
+      return {properties: properties};
+    });
+  }
+
   addProduct(propertyId, productId) {
     this.setState((state, props) => {
       const {properties} = state;
@@ -72,6 +86,7 @@ class App extends Component {
           properties: this.state.properties,
           methods: {
             createProperty: this.createProperty.bind(this),
+            deleteProperty: this.deleteProperty.bind(this),
             addProduct: this.addProduct.bind(this)
           }
         })
