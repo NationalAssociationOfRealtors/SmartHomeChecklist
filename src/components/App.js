@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import PropertyUtils from '../utils/PropertyUtils'
 import ProductUtils from '../utils/ProductUtils'
+import logo from '../images/checkbox.svg';
+import '../styles/main.css';
 
 class App extends Component {
   constructor(props) {
@@ -113,7 +115,15 @@ class App extends Component {
       });
 
       return (
-        <div>
+        <div className="app-container">
+          <div className="logo">
+            <img src={logo} width="54" />
+            <div className="logo-text">
+              <h1>Smart Home Checklist</h1>
+              <span>Transfer ownership of smart devices wisely</span>
+            </div>
+          </div>
+
           {childrenWithProps}
         </div>
       );
