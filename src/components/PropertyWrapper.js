@@ -24,6 +24,7 @@ class PropertyWrapper extends Component {
       return (
         <div>
           Loading... make sure your device is connected to the internet.
+          <a href="/">Go home</a>
         </div>
       );
     }

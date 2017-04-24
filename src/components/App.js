@@ -78,6 +78,25 @@ class App extends Component {
     });
   }
 
+  deleteProduct(propertyId, productId) {
+    this.setState((state, props) => {
+      const {properties} = state;
+      let {products} = properties[propertyId];
+
+      // Delete product
+      properties[propertyId].products = _.remove(products, (id) => {
+        // TODO - figure out why !== works correctly instead of == 
+        // https://lodash.com/docs/4.17.4#remove
+        return id !== productId;
+      });
+
+      // Save to localStorage
+      PropertyUtils.setToStorage(properties);
+
+      return {properties: properties}
+    });
+  }
+
   render() {
     if (!_.isNull(this.state.properties)) {
       const childrenWithProps = React.Children.map(this.props.children, (child) => {
@@ -87,7 +106,8 @@ class App extends Component {
           methods: {
             createProperty: this.createProperty.bind(this),
             deleteProperty: this.deleteProperty.bind(this),
-            addProduct: this.addProduct.bind(this)
+            addProduct: this.addProduct.bind(this),
+            deleteProduct: this.deleteProduct.bind(this)
           }
         })
       });
