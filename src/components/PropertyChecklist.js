@@ -20,16 +20,6 @@ class PropertyChecklist extends Component {
     return images;
   }
 
-  handleDeleteProperty() {
-    const {methods, propertyId} = this.props;
-
-    // Delete property
-    methods.deleteProperty(propertyId)
-
-    // Redirect to home screen
-    browserHistory.push('/');
-  }
-
   render() {
     const {products, propertyId, property} = this.props;
 
@@ -49,7 +39,7 @@ class PropertyChecklist extends Component {
         <br />
         <Link to={`/property/${propertyId}/share`}>Share</Link>
         <br />
-        <button onClick={this.handleDeleteProperty.bind(this)}>Delete Property</button>
+        <Link to={`/property/${propertyId}/edit`}>Edit</Link>
       </div>
     );
   }

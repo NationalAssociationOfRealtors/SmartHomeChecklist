@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import _ from 'lodash';
-import PropertyUtils from '../utils/PropertyUtils'
+import PropertyUtils from '../utils/PropertyUtils';
+import PropertyForm from './shared/PropertyForm';
 
 class Home extends Component {
 
@@ -27,25 +28,22 @@ class Home extends Component {
     const properties = this.props.properties;
 
     return (
-      <div>
+      <div className="Home-properties">
+        <PropertyForm 
+          labelText="Create a new property list"
+          buttonText="Create"
+          propertyName={this.state.propertyName}
+          onChange={(e) => this.handlePropertyNameChange(e)}
+          onSubmit={(e) => this.handlePropertyFormSubmit(e)}
+          />
+
         {_.keys(properties).map(id => {
           return (
-            <div key={id}>
+            <div key={id} className="property">
               <Link to={`/property/${id}`}>{properties[id].name}</Link>
             </div>
           );
         })}
-
-        <form onSubmit={(e) => this.handlePropertyFormSubmit(e)}>
-          <input type="text"
-            value={this.state.propertyName} 
-            placeholder="Property Name"
-            onChange={(e) => this.handlePropertyNameChange(e)}
-            required  
-          />
-
-          <input type="submit" value="Create Property" />
-        </form>
       </div>
     );
   }

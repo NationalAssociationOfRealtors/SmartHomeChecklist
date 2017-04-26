@@ -48,7 +48,24 @@ class App extends Component {
       // Save to localStorage
       PropertyUtils.setToStorage(properties);
 
-      return {properties: properties};
+      return {properties};
+    }, callback);
+  }
+
+  renameProperty(id, name, callback) {
+    this.setState((state, props) => {      
+      const {properties} = state;
+
+      // Rename property
+      let property = properties[id];
+      property.name = name;
+
+      properties[id] = property;
+
+      // Save to localStorage
+      PropertyUtils.setToStorage(properties);
+
+      return {properties};
     }, callback);
   }
 
