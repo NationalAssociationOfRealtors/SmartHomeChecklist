@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router'
 
 class PropertyChecklist extends Component {  
+  componentWillMount() {
+    this.preloadImages()
+  }
+
+  preloadImages() {
+    const {products, property} = this.props;
+    const images = [];
+
+    property.products.map(id => {
+      const image = new Image();
+      image.src = products.byId[id].image;
+      
+      images.push(image);
+    });
+
+    return images;
+  }
+
   handleDeleteProperty() {
     const {methods, propertyId} = this.props;
 
