@@ -30,31 +30,26 @@ class PropertyChecklist extends Component {
     browserHistory.push('/');
   }
 
-  handleDeleteProduct(productId) {
-    const {methods, propertyId} = this.props;
-
-    methods.deleteProduct(propertyId, productId);
-  }
-
   render() {
     const {products, propertyId, property} = this.props;
 
     return (
       <div>
+        {property.products.map(id => {
+          return (
+            <div key={id} className="PropertyChecklist-product">
+              <Link to={`/property/${propertyId}/product/${id}`}>
+                {products.byId[id].device_name}
+              </Link>
+            </div>
+          );
+        })}
+
         <Link to={`/property/${propertyId}/productGroups`}>Add more</Link>
         <br />
         <Link to={`/property/${propertyId}/share`}>Share</Link>
         <br />
-        <button onClick={this.handleDeleteProperty.bind(this)}>Delete</button>
-
-        {property.products.map(id => {
-          return (
-            <div key={id}>
-              {products.byId[id].device_name}
-              <button onClick={() => this.handleDeleteProduct(id)}>Delete</button>
-            </div>
-          );
-        })}
+        <button onClick={this.handleDeleteProperty.bind(this)}>Delete Property</button>
       </div>
     );
   }

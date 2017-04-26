@@ -8,6 +8,7 @@ import PropertyChecklist from './components/PropertyChecklist';
 import PropertyProductGroups from './components/PropertyProductGroups';
 import PropertyProductGroup from './components/PropertyProductGroup';
 import PropertyShare from './components/PropertyShare';
+import PropertyProduct from './components/PropertyProduct';
 import ReceiveProperty from './components/ReceiveProperty';
 
 const Routes = (props) => (
@@ -19,6 +20,7 @@ const Routes = (props) => (
         <Route path="/property/:propertyId/productGroups" component={PropertyProductGroups} />
         <Route path="/property/:propertyId/group/:groupSlug" component={PropertyProductGroup} />
         <Route path="/property/:propertyId/share" component={PropertyShare} />
+        <Route path="/property/:propertyId/product/:productId" component={PropertyProduct} />
       </Route>
       <Route path="/receive" component={ReceiveProperty} />
     </Route>

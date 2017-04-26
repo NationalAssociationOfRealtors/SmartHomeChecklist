@@ -80,7 +80,7 @@ class App extends Component {
     });
   }
 
-  deleteProduct(propertyId, productId) {
+  deleteProduct(propertyId, productId, callback) {
     this.setState((state, props) => {
       const {properties} = state;
       let {products} = properties[propertyId];
