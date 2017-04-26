@@ -29,7 +29,7 @@ class ReceiveProperty extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App-loading">
         Loading...
       </div>
     );
