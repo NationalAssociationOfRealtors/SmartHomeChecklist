@@ -1,11 +1,39 @@
-.Home-properties {
+.Home-form-container {
   margin: 1em;
 
-  .property {
-    padding-top: 1em;
+  .toggle-property-form {
+    margin-top: 1.5em;
 
-    &:first-child {
+    span {
+      display: block;
+      color: white;
+      font-size: 1.25em;
+      margin-left: 0.33em;
+      margin-bottom: 0.25em;
+    }
+
+    button {
+      border: none;
+      display: block;
+      margin-bottom: 1em;
+      width: 100%;
+      background: white;
+      color: #666;
+      text-align: left;
+      text-indent: 0.66em;
+      padding: 0.5em 0;
+      font-size: 1.25em;
+    }
+  }
+}
+
+.Home-properties {
+  .property {
+    padding: 1em 1em 0 1em;
+
+    &:nth-of-type(1) {
       border-top: 1px solid #c29dd5;
+      margin-top: 3em;
     }
 
     a {

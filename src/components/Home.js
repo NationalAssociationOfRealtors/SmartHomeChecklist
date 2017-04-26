@@ -10,8 +10,13 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      propertyName: ''
+      propertyName: '',
+      showForm: false
     };
+  }
+
+  showForm() {
+    this.setState({showForm: true})
   }
 
   handlePropertyNameChange(event) {
@@ -28,22 +33,36 @@ class Home extends Component {
     const properties = this.props.properties;
 
     return (
-      <div className="Home-properties">
-        <PropertyForm 
-          labelText="Create a new property list"
-          buttonText="Create"
-          propertyName={this.state.propertyName}
-          onChange={(e) => this.handlePropertyNameChange(e)}
-          onSubmit={(e) => this.handlePropertyFormSubmit(e)}
-          />
+      <div>
+        <div className="Home-form-container">
 
-        {_.keys(properties).map(id => {
-          return (
-            <div key={id} className="property">
-              <Link to={`/property/${id}`}>{properties[id].name}</Link>
+          {!this.state.showForm && 
+            <div className="toggle-property-form">
+              <span>Hi</span>
+              <button onClick={this.showForm.bind(this)}>Create a new property list</button>
             </div>
-          );
-        })}
+          }
+
+          {this.state.showForm && 
+            <PropertyForm 
+              labelText="Create a new property list"
+              buttonText="Create"
+              propertyName={this.state.propertyName}
+              onChange={(e) => this.handlePropertyNameChange(e)}
+              onSubmit={(e) => this.handlePropertyFormSubmit(e)}
+              />
+          }
+        </div>
+
+        <div className="Home-properties">
+          {_.keys(properties).map(id => {
+            return (
+              <div key={id} className="property">
+                <Link to={`/property/${id}`}>{properties[id].name}</Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
