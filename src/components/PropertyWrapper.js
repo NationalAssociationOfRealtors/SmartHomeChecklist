@@ -7,24 +7,27 @@ class PropertyWrapper extends Component {
     const propertyId = this.props.params.propertyId;
     const property = this.props.properties[propertyId];
     const propsForChildren = {...this.props, propertyId, property};
-
-    const childrenWithProps = React.Children.map(this.props.children, (child) => {
-      return React.cloneElement(child, propsForChildren);
-    });
     
     if (!_.isEmpty(this.props.products)) {
+      const childrenWithProps = React.Children.map(this.props.children, (child) => {
+        return React.cloneElement(child, propsForChildren);
+      });
+
       return (
         <div>
-          <h3><Link to={`/property/${propertyId}`}>{property.name}</Link></h3>
+          <div className="PropertyWrapper-header">
+            <Link to={`/property/${propertyId}`}>{property.name}</Link>
+          </div>
 
           {childrenWithProps}
         </div>
       );
     } else {
       return (
-        <div>
-          Loading... make sure your device is connected to the internet.
-          <a href="/">Go home</a>
+        <div className="App-connection-error">
+          No internet connection detected. 
+          <br />
+          <a href="/">Refresh page</a>
         </div>
       );
     }

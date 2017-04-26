@@ -1,0 +1,38 @@
+.PropertyChecklist-container {
+  .PropertyChecklist-products {
+    overflow: hidden;
+    margin: 1em;
+    
+    .product {
+      display: inline-block;
+      margin-bottom: 0.85em;
+      font-size: 1.25em;
+      border-bottom: 2px solid #9ccc65;
+    }
+
+    .add-more {
+      font-size: 1.25em;
+      border-bottom: 2px solid #9ccc65;
+      float: right;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .actions {
+    border-top: 1px solid #c29dd5;
+    margin-top: 2em;
+    padding: 2em 1em;
+
+    a {
+      display: block;
+      margin-bottom: 1em;
+      width: 100%;
+      background: white;
+      color: #666;
+      text-align: center;
+      padding: 0.33em 0;
+      font-size: 1.25em;
+    }
+  }
+}

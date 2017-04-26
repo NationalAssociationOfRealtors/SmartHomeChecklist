@@ -38,16 +38,20 @@ class PropertyEdit extends Component {
 
   render() {
     return (
-      <div className="PropertyEdit-container">
-        <PropertyForm 
-          labelText="Rename property"
-          buttonText="Update"
-          propertyName={this.state.propertyName}
-          onChange={(e) => this.handlePropertyNameChange(e)}
-          onSubmit={(e) => this.handlePropertyFormSubmit(e)}
-          />
+      <div>
+        <div className="PropertyEdit-form">
+          <PropertyForm 
+            labelText="Rename property"
+            buttonText="Update"
+            propertyName={this.state.propertyName}
+            onChange={(e) => this.handlePropertyNameChange(e)}
+            onSubmit={(e) => this.handlePropertyFormSubmit(e)}
+            />
+        </div>
 
-        <button onClick={this.handleDeleteProperty.bind(this)}>Delete Property</button>
+        <div className="PropertyEdit-actions">
+          <button onClick={this.handleDeleteProperty.bind(this)}>Delete Property</button>
+        </div>
       </div>
     );
   }

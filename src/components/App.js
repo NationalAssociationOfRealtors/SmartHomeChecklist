@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 import _ from 'lodash';
 import PropertyUtils from '../utils/PropertyUtils'
 import ProductUtils from '../utils/ProductUtils'
@@ -113,42 +114,45 @@ class App extends Component {
       PropertyUtils.setToStorage(properties);
 
       return {properties: properties}
-    });
+    }, callback);
   }
 
   render() {
+    let content;
+
     if (!_.isNull(this.state.properties)) {
-      const childrenWithProps = React.Children.map(this.props.children, (child) => {
+      content = React.Children.map(this.props.children, (child) => {
         return React.cloneElement(child, {
           products: this.state.products,
           properties: this.state.properties,
           methods: {
             createProperty: this.createProperty.bind(this),
             deleteProperty: this.deleteProperty.bind(this),
+            renameProperty: this.renameProperty.bind(this),
             addProduct: this.addProduct.bind(this),
             deleteProduct: this.deleteProduct.bind(this)
           }
         })
       });
-
-      return (
-        <div className="app-container">
-          <div className="logo">
-            <img src={logo} width="54" />
-            <div className="logo-text">
-              <h1>Smart Home Checklist</h1>
-              <span>Transfer ownership of smart devices wisely</span>
-            </div>
-          </div>
-
-          {childrenWithProps}
-        </div>
-      );
     } else {
-      return (
-        <div>Loading...</div>
+      content = (
+        <div className="App-loading">Loading...</div>
       );
     }
+
+    return (
+      <div>
+        <div className="App-logo">
+          <Link to="/"><img src={logo} alt="Smart Home Checklist" width="54" /></Link>
+          <div className="logo-text">
+            <h1>Smart Home Checklist</h1>
+            <span>Transfer ownership of smart devices wisely</span>
+          </div>
+        </div>
+
+        {content}
+      </div>
+    );
   }
 }
 

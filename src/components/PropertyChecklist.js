@@ -24,22 +24,25 @@ class PropertyChecklist extends Component {
     const {products, propertyId, property} = this.props;
 
     return (
-      <div>
-        {property.products.map(id => {
-          return (
-            <div key={id} className="PropertyChecklist-product">
-              <Link to={`/property/${propertyId}/product/${id}`}>
-                {products.byId[id].device_name}
-              </Link>
-            </div>
-          );
-        })}
+      <div className="PropertyChecklist-container">
+        <div className="PropertyChecklist-products">
+          {property.products.map(id => {
+            return (
+              <div key={id}>
+                <Link className="product" to={`/property/${propertyId}/product/${id}`}>
+                  {products.byId[id].device_name}
+                </Link>
+              </div>
+            );
+          })}
 
-        <Link to={`/property/${propertyId}/productGroups`}>Add more</Link>
-        <br />
-        <Link to={`/property/${propertyId}/share`}>Share</Link>
-        <br />
-        <Link to={`/property/${propertyId}/edit`}>Edit</Link>
+          <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add more</Link>
+        </div>
+
+        <div className="actions">
+          <Link to={`/property/${propertyId}/share`}>Share</Link>
+          <Link to={`/property/${propertyId}/edit`}>Edit</Link>
+        </div>
       </div>
     );
   }

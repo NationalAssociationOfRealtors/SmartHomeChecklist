@@ -15,6 +15,8 @@ class PropertyProductGroup extends Component {
       
       images.push(image);
     });
+
+    return images;
   }
 
   groupProducts() {
@@ -25,7 +27,7 @@ class PropertyProductGroup extends Component {
   }
 
   handleAddProduct(productId) {
-    this.props.methods.addProduct(this.props.propertyId, productId)
+    return this.props.methods.addProduct(this.props.propertyId, productId)
   }
 
   render() {
