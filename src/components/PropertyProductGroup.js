@@ -9,7 +9,7 @@ class PropertyProductGroup extends Component {
     const {products} = this.props;
     const images = [];
 
-    this.groupProducts().map(id => {
+    this.productsByGroup().map(id => {
       const image = new Image();
       image.src = products.byId[id].image;
       
@@ -19,7 +19,7 @@ class PropertyProductGroup extends Component {
     return images;
   }
 
-  groupProducts() {
+  productsByGroup() {
     const {products} = this.props;
     const {groupSlug} = this.props.params;
 
@@ -35,7 +35,7 @@ class PropertyProductGroup extends Component {
 
     return (
       <div>
-        {this.groupProducts().map(id => {
+        {this.productsByGroup().map(id => {
           return (
             <div key={id}>
               {products.byId[id].device_name}
