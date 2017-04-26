@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router'
+import { Link } from 'react-router'
 
 class PropertyChecklist extends Component {  
   componentWillMount() {
@@ -14,7 +14,7 @@ class PropertyChecklist extends Component {
       const image = new Image();
       image.src = products.byId[id].image;
       
-      images.push(image);
+      return images.push(image);
     });
 
     return images;

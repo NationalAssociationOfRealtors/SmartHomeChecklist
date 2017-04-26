@@ -13,7 +13,7 @@ class PropertyProductGroup extends Component {
       const image = new Image();
       image.src = products.byId[id].image;
       
-      images.push(image);
+      return images.push(image);
     });
 
     return images;
