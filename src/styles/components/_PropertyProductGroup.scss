@@ -1,0 +1,65 @@
+.PropertyProductGroup-container {
+  .breadcrumb {
+    padding: 1em;
+
+    a {
+      font-size: 1.25em;
+    }
+  }
+
+  .products {
+    background: white;
+
+    .product-view {
+      padding: 2em 1em 4em;
+    }
+
+    .product-header {
+      overflow: hidden;
+
+      .product-name {
+        color: #6a1b9a;
+        font-size: 1.25em;
+      }
+
+      .counter {
+        float: right;
+        font-size: 0.85em;
+        padding-left: 1.5em;
+        padding-top: 0.35em;
+        padding-bottom: 2.5em;
+        font-style: italic;
+      }
+    }
+
+    .product-image {
+      padding: 1em 0 2em 0;
+
+      img {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    .actions {
+      padding-bottom: 2em;
+      overflow: hidden;
+
+      .button {
+        background: none;
+        float: right;
+        border: none;
+        padding: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #6a1b9a;
+        border-bottom: 2px solid #9ccc65;
+        text-transform: uppercase;
+      }
+
+      span.button {
+        opacity: 0.5;
+      }
+    }
+  }
+}

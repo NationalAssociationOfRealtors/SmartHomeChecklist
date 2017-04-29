@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
+import SwipeableViews from 'react-swipeable-views';
 
 class PropertyProductGroup extends Component {
   componentWillMount() {
@@ -19,6 +21,17 @@ class PropertyProductGroup extends Component {
     return images;
   }
 
+  productsInList() {
+    const {property} = this.props;
+    const products = {};
+
+    property.products.map((id) => {
+      products[id] = true;
+    });
+
+    return products;
+  }
+
   productsByGroup() {
     const {products} = this.props;
     const {groupSlug} = this.props.params;
@@ -31,18 +44,38 @@ class PropertyProductGroup extends Component {
   }
 
   render() {
-    const {products} = this.props;
+    const {products, propertyId} = this.props;
+    const {groupSlug} = this.props.params;
+    const productsByGroup = this.productsByGroup();
+    const productsInList = this.productsInList();
 
     return (
-      <div>
-        {this.productsByGroup().map(id => {
-          return (
-            <div key={id}>
-              {products.byId[id].device_name}
-              <button onClick={() => this.handleAddProduct(id)}>Add</button>
-            </div>
-          );
-        })}
+      <div className="PropertyProductGroup-container">
+        <div className="breadcrumb">
+          <Link to={`/property/${propertyId}`}>&laquo; {groupSlug}</Link>
+        </div>
+
+        <div className="products">
+          <SwipeableViews>
+            {productsByGroup.map((id, index) => {
+              return (
+                <div className="product-view" key={id}>
+                  <div className="product-header">
+                    <span className="counter">{index+1} of {productsByGroup.length}</span>
+                    <span className="product-name">{products.byId[id].device_name}</span>
+                  </div>
+                  <div className="product-image">
+                    <img alt={products.byId[id].device_name} src={products.byId[id].image} width="60%" />
+                  </div>
+                  <div className="actions">
+                    {!productsInList[id] && <button className="button" onClick={() => this.handleAddProduct(id)}>Add to list</button>}
+                    {productsInList[id] && <span className="button">Add to list</span>}
+                  </div>
+                </div>
+              );
+            })}
+          </SwipeableViews>
+        </div>
       </div>
     );
   }
