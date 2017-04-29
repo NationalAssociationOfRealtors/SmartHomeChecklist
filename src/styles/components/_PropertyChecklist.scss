@@ -24,8 +24,14 @@
     margin-top: 2em;
     padding: 2em 1em;
 
+    &.blank-state {
+      border: none;
+      padding-top: 0;
+    }
+
     a {
       display: block;
+      border: none;
       margin-bottom: 1em;
       width: 100%;
       background: white;
