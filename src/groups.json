@@ -1,0 +1,23 @@
+{
+  "Thermostats": ["thermostat"],
+  "Locks": ["door-lock"],
+  "Lighting": ["lamp-socket", "light-bulb-color", "light-bulb-white-light", "light-switch", "lightstrip-color", "sensor-light"],
+  "Cameras": ["cloud-camera"],
+  "Appliances": ["air-conditioner","air-conditioner-controller","air-purifier","fridge","bed","clothes-dryer", "heater", "humidifier","dishwasher","stove","oven","plant-growing-system","radiator-controller","washing-machine"],
+  "Door Bells": ["door-bell"],
+  "Security & Motion": ["sensor-door","sensor-motion", "sensor-presence","sensor-window","siren"],
+  "Bathroom": ["scale","mirror","shower-head-water-meter"],
+  "Kitchen": ["egg-tray","baby-formula-maker","coffee-machine","cooker","kettle","fridge","oven","plant-growing-system","stove"],
+  "Pets": ["pet-door", "pet-feeder"],
+  "Cleaning": ["floor-mopper","floor-scrubber","gutter-cleaner","vacuum-cleaner","washing-machine","window-cleaner"],
+  "Audio Visual": ["audio-speaker","media-player","music-player","speaker-docking-station", "tv"],
+  "Switches": ["lamp-socket","light-switch","plug","power-outlet","relay-switch","remote-control","switch","water-valve"],
+  "Energy Monitor": ["energy-monitor"],
+  "Environmental Quality": ["air-purifier", "air-vent","fan","humidifier","heater","radiator-controller","sensor-air-quality","sensor-co","sensor-co2","sensor-gas","sensor-light","sensor-sound","sensor-temperature","sensor-watermoisture","sensor-wind-speed"],
+  "Garage": ["garage-door-controller"],
+  "Gateways": ["dashboard","gateway-hub-closed-ecosystem","gateway-hub-open-ecosystem","infrared-controller","remote-control","wireless-signal-extender"],
+  "Lawn & Irrigation": ["gutter-cleaner","irrigation-controller","lawn-mower","pool-cleaner","sensor-rain","sensor-soil-moisture","sensor-wind-speed"],
+  "Shades & Blinds": ["shades-blinds","shutter-controller"],
+  "Smoke/CO/CO2": ["smoke-detector"],
+  "Voice Command": ["voice-command-device"]
+}

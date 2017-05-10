@@ -48,7 +48,7 @@ class PropertyChecklist extends Component {
           </div>
         }
 
-        {property.products.length == 0 &&
+        {property.products.length === 0 &&
           <div className="PropertyChecklist-products">
             <div className="actions blank-state">
               <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add products to list</Link>

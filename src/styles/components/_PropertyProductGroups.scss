@@ -1,0 +1,44 @@
+.PropertyProductGroups-container {
+  padding-top: 2em;
+  text-align: center;
+
+  .category-icon {
+    position: relative;
+    display: inline-block;
+    width: 7.5em;
+    height: 9em;
+    border: 1px solid white;
+    text-align: center;
+    padding: 0.5em 1em 0 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+
+    span {
+      font-size: 0.9em;
+      position: relative;
+      top: -1em;
+      text-transform: uppercase;
+    }
+  }
+
+  .all {
+    padding: 0 1em 1em;
+    text-align: left;
+
+    h3 {
+      color: white;
+      text-transform: uppercase;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 0.85em;
+      font-size: 1.25em;
+      border-bottom: 2px solid #9ccc65;
+    }
+  }
+
+}
