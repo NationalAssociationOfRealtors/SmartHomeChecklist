@@ -1,0 +1,9 @@
+@mixin vertical-gradient($color1, $color2) {
+  background-color: $color1;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $color1), color-stop(100%, $color2));
+  background-image: -webkit-linear-gradient($color1, $color2);
+  background-image: -moz-linear-gradient($color1, $color2);
+  background-image: -o-linear-gradient($color1, $color2);
+  background-image: linear-gradient($color1, $color2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff$color1', endColorstr='#ff$color2', GradientType=0);
+}

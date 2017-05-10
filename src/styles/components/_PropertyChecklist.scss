@@ -3,9 +3,13 @@
     overflow: hidden;
     margin: 1em;
     
+    div {
+      margin-bottom: 1.15em;
+      line-height: 1.3;
+    }
+
     .product {
-      display: inline-block;
-      margin-bottom: 0.85em;
+      margin-right: 0.5em;
       font-size: 1.25em;
       border-bottom: 2px solid #9ccc65;
     }
