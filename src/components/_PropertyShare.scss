@@ -1,32 +1,17 @@
-.PropertyForm {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
+.PropertyShare-container {
   overflow: hidden;
-
-  label {
-    display: block;
-    color: white;
-    font-size: 1.25em;
-    margin-left: 0.33em;
-    margin-bottom: 0.25em;
-  }
+  margin: 1em;
 
   input[type="text"] {
+    margin-top: 0.25em;
     background: white;
     width: 100%;
     padding: 0.4em 0;
     text-indent: 0.5em;
     font-size: 1.25em;
   }
-  
-  span {
-    display: block;
-    color: white;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
-  }
 
-  input[type="submit"] {
+  a, span {
     margin-top: 0.5em;
     background: none;
     border: none;
@@ -38,4 +23,9 @@
     border-bottom: 3px solid #9ccc65;
     text-transform: uppercase;
   }
+
+  span {
+    opacity: 0.5;
+  }
+
 }

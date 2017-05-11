@@ -1,0 +1,87 @@
+$inputTextIndent: 0.5em;
+
+.fl-container {
+  padding: 1.75em 0 0 0;
+  position: relative;
+
+  label {
+    position: absolute;
+    top: 0;
+    left: $inputTextIndent;
+    font-size: 1.25em;
+    color: #666;
+    font-weight: normal;
+    pointer-events: none;
+    transition: 200ms ease all;
+    transform-origin: left top;
+    transform: scale(1) translate3d(0, 2em, 0);
+    -moz-transform-origin: left top;
+    -moz-transform: scale(1) translate3d(0, 2em, 0);
+    -moz-transition: 200ms ease all;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    -webkit-transform-origin: left top;
+    -webkit-transform: scale(1) translate3d(0, 2em, 0);
+    -webkit-transition: 200ms ease all;
+  }
+
+  input[type="text"] {
+    background: white;
+    color: #444;
+    width: 100%;
+    padding: 0.4em 0;
+    text-indent: $inputTextIndent;
+    font-size: 1.25em;
+    outline: 0;
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.25em;
+    color: white;
+    font-size: 1.25em;
+  }
+
+  .help {
+    display: block;
+    color: white;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+  }
+
+  .onFocus {
+    display: none;
+  }
+
+  &.focused {
+    label {
+      transform: scale(0.8) translate3d(0, 0, 0);
+      -moz-transform: scale(0.8) translate3d(0, 0, 0);
+      -webkit-transform: scale(1) translate3d(0, 0, 0);
+      color: white;
+    }
+
+    .onFocus {
+      display: block;
+    }
+
+    .onBlur {
+      display: none;
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 0.5em;
+    background: none;
+    border: none;
+    padding: 0;
+    float: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    border-bottom: 3px solid #9ccc65;
+    text-transform: uppercase;
+  }
+}

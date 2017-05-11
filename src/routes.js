@@ -5,7 +5,6 @@ import App from './components/App';
 import Home from './components/Home';
 import PropertyWrapper from './components/PropertyWrapper';
 import PropertyChecklist from './components/PropertyChecklist';
-import PropertyEdit from './components/PropertyEdit';
 import PropertyProductGroups from './components/PropertyProductGroups';
 import PropertyProductGroupsAll from './components/PropertyProductGroupsAll';
 import PropertyProductGroup from './components/PropertyProductGroup';
@@ -19,7 +18,6 @@ const Routes = (props) => (
       <IndexRoute component={Home} />
       <Route path="/property/:propertyId" component={PropertyWrapper} >
         <IndexRoute component={PropertyChecklist} />
-        <Route path="/property/:propertyId/edit" component={PropertyEdit} />
         <Route path="/property/:propertyId/productGroups" component={PropertyProductGroups} />
         <Route path="/property/:propertyId/productGroupsAll" component={PropertyProductGroupsAll} />
         <Route path="/property/:propertyId/group/:groupSlug" component={PropertyProductGroup} />

@@ -72,7 +72,6 @@ class PropertyChecklist extends Component {
 
             <div className="actions">
               <Link to={`/property/${propertyId}/share`}>Share</Link>
-              <Link to={`/property/${propertyId}/edit`}>Edit</Link>
             </div>
           </div>
         }
@@ -80,8 +79,7 @@ class PropertyChecklist extends Component {
         {property.products.length === 0 &&
           <div>
             <div className="actions blank-state">
-              <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add products to list</Link>
-              <Link to={`/property/${propertyId}/edit`}>Edit</Link>
+              <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add products</Link>
             </div>
           </div>
         }

@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router'
 import _ from 'lodash';
 import PropertyUtils from '../utils/PropertyUtils';
-import PropertyForm from './shared/PropertyForm';
+import CreatePropertyForm from './CreatePropertyForm';
 
 class Home extends Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      propertyName: '',
-      showForm: false
+      propertyName: ''
     };
-  }
-
-  showForm() {
-    this.setState({showForm: true})
   }
 
   handlePropertyNameChange(event) {
@@ -39,23 +33,14 @@ class Home extends Component {
     return (
       <div>
         <div className="Home-form-container">
-
-          {!this.state.showForm && 
-            <div className="toggle-property-form">
-              <span>Hi</span>
-              <button onClick={this.showForm.bind(this)}>Create a new property list</button>
-            </div>
-          }
-
-          {this.state.showForm && 
-            <PropertyForm 
-              labelText="Create a new property list"
-              buttonText="Create"
-              propertyName={this.state.propertyName}
-              onChange={(e) => this.handlePropertyNameChange(e)}
-              onSubmit={(e) => this.handlePropertyFormSubmit(e)}
-              />
-          }
+          <CreatePropertyForm 
+            labelText="Create a new property list"
+            helpText="Be mindful – your clients may see this name"
+            buttonText="Create"
+            propertyName={this.state.propertyName}
+            onChange={(e) => this.handlePropertyNameChange(e)}
+            onSubmit={(e) => this.handlePropertyFormSubmit(e)}
+            />
         </div>
 
         <div className="Home-properties">

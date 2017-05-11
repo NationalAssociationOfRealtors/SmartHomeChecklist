@@ -1,6 +1,7 @@
 @import "mixins";
 @import "global";
 
+@import "./fl-input";
 @import "./components/Home";
 @import "./components/PropertyWrapper";
 @import "./components/PropertyChecklist";
@@ -9,5 +10,3 @@
 @import "./components/PropertyProductGroup";
 @import "./components/PropertyProductGroups";
 @import "./components/PropertyProduct";
-
-@import "./components/PropertyForm";
