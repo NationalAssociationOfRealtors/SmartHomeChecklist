@@ -40,21 +40,23 @@ class PropertyProductGroups extends Component {
 
     return (
       <div className="PropertyProductGroups-container">
-        {groups.map(name => {
-          if (icons[name]) {
-            return (
-              <Link to={`/property/${propertyId}/group/${name}`} className="category-icon" key={name}>
-                <img src={icons[name]} width="100%" alt={name} />
-                <span>{name}</span>
-              </Link>
-            );
-          }
-        })}
+        <div className="container">
+          {groups.map(name => {
+            if (icons[name]) {
+              return (
+                <Link to={`/property/${propertyId}/group/${name}`} className="category-icon" key={name}>
+                  <img src={icons[name]} width="100%" alt={name} />
+                  <span>{name}</span>
+                </Link>
+              );
+            }
+          })}
 
-        <Link to={`/property/${propertyId}/productGroupsAll`} className="category-icon">
-          <img src={moreIcon} width="100%" alt="More" />
-          <span>All devices</span>
-        </Link>
+          <Link to={`/property/${propertyId}/productGroupsAll`} className="category-icon">
+            <img src={moreIcon} width="100%" alt="More" />
+            <span>All devices</span>
+          </Link>
+        </div>
       </div>
     );
   }

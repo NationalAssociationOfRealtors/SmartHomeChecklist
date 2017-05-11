@@ -39,15 +39,17 @@ class PropertyShare extends Component {
     const isValidEmail = this.isValidEmail(this.state.email);
 
     return (
-      <div className="PropertyShare-container">
-        <input type="text"
-          value={this.state.email} 
-          placeholder="Email Address"
-          onChange={(e) => this.handleEmailChange(e)}
-          required  
-          />
-        
-        {isValidEmail ? <a target="_blank" href={this.mailTo()}>Share</a> : <span>Share</span>}
+      <div className="container">
+        <div className="PropertyShare-container">
+          <input type="text"
+            value={this.state.email} 
+            placeholder="Email Address"
+            onChange={(e) => this.handleEmailChange(e)}
+            required  
+            />
+          
+          {isValidEmail ? <a target="_blank" href={this.mailTo()}>Share</a> : <span>Share</span>}
+        </div>
       </div>
     );
   }

@@ -42,8 +42,11 @@
   .actions {
     border-top: 1px solid #c29dd5;
     margin-top: 2em;
-    padding: 2em 1em;
 
+    .inner {
+      padding: 2em 1em;
+    }
+    
     &.blank-state {
       border: none;
       margin-top: 2em;

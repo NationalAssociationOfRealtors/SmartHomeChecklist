@@ -16,7 +16,11 @@ class PropertyWrapper extends Component {
       return (
         <div>
           <div className="PropertyWrapper-header">
-            <Link to={`/property/${propertyId}`}>{property.name}</Link>
+            <div className="container">
+              <div className="inner">
+                <Link to={`/property/${propertyId}`}>{property.name}</Link>
+              </div>
+            </div>
           </div>
 
           {childrenWithProps}

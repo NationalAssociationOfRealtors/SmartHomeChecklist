@@ -143,10 +143,12 @@ class App extends Component {
     return (
       <div>
         <div className="App-logo">
-          <Link to="/"><img src={logo} alt="Smart Home Checklist" width="54" /></Link>
-          <div className="logo-text">
-            <h1>Smart Home Checklist</h1>
-            <span>Transfer ownership of smart devices wisely</span>
+          <div className="container">
+            <Link to="/"><img src={logo} alt="Smart Home Checklist" width="54" /></Link>
+            <div className="logo-text">
+              <h1>Smart Home Checklist</h1>
+              <span>Transfer ownership of smart devices wisely</span>
+            </div>
           </div>
         </div>
 

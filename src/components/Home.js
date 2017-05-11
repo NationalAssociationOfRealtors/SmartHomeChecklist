@@ -32,26 +32,32 @@ class Home extends Component {
 
     return (
       <div>
-        <div className="Home-form-container">
-          <CreatePropertyForm 
-            labelText="Create a new property list"
-            helpText="Be mindful – your clients may see this name"
-            buttonText="Create"
-            propertyName={this.state.propertyName}
-            onChange={(e) => this.handlePropertyNameChange(e)}
-            onSubmit={(e) => this.handlePropertyFormSubmit(e)}
-            />
+        <div className="container">
+          <div className="Home-form-container">
+            <CreatePropertyForm 
+              labelText="Create a new property list"
+              helpText="Be mindful – your clients may see this name"
+              buttonText="Create"
+              propertyName={this.state.propertyName}
+              onChange={(e) => this.handlePropertyNameChange(e)}
+              onSubmit={(e) => this.handlePropertyFormSubmit(e)}
+              />
+          </div>
         </div>
 
-        <div className="Home-properties">
-          {_.keys(properties).reverse().map(id => {
-            return (
-              <div key={id} className="property">
-                <Link to={`/property/${id}`}>{properties[id].name}</Link>
-              </div>
-            );
-          })}
-        </div>
+        {_.keys(properties).length > 0 &&
+          <div className="Home-properties">
+            <div className="container">
+              {_.keys(properties).reverse().map(id => {
+                return (
+                  <div key={id} className="property">
+                    <Link to={`/property/${id}`}>{properties[id].name}</Link>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        }
       </div>
     );
   }

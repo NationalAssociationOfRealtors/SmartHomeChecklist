@@ -48,30 +48,38 @@ class PropertyChecklist extends Component {
     return (
       <div className="PropertyChecklist-container">
         {this.shouldDisplayAlert() &&
-          <div className="alert">
-            <button onClick={() => this.hideAlert()}>hide</button>
-            Device successfully added
+          <div className="container">
+            <div className="alert">
+              <button onClick={() => this.hideAlert()}>hide</button>
+              Device successfully added
+            </div>
           </div>
         }
 
         {property.products.length > 0 &&
           <div>
-            <div className="PropertyChecklist-products">
-              {property.products.map(id => {
-                return (
-                  <div key={id}>
-                    <Link className="product" to={`/property/${propertyId}/product/${id}`}>
-                      {products.byId[id].device_name}
-                    </Link>
-                  </div>
-                );
-              })}
+            <div className="container">
+              <div className="PropertyChecklist-products">
+                {property.products.map(id => {
+                  return (
+                    <div key={id}>
+                      <Link className="product" to={`/property/${propertyId}/product/${id}`}>
+                        {products.byId[id].device_name}
+                      </Link>
+                    </div>
+                  );
+                })}
 
-              <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add more</Link>
+                <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add more</Link>
+              </div>
             </div>
 
             <div className="actions">
-              <Link to={`/property/${propertyId}/share`}>Share</Link>
+              <div className="container">
+                <div className="inner">
+                  <Link to={`/property/${propertyId}/share`}>Share</Link>
+                </div>
+              </div>
             </div>
           </div>
         }
@@ -79,7 +87,11 @@ class PropertyChecklist extends Component {
         {property.products.length === 0 &&
           <div>
             <div className="actions blank-state">
-              <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add products</Link>
+              <div className="container">
+                <div className="inner">
+                  <Link className="add-more" to={`/property/${propertyId}/productGroups`}>Add products</Link>
+                </div>
+              </div>
             </div>
           </div>
         }

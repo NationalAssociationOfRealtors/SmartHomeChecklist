@@ -26,8 +26,7 @@ class CreatePropertyForm extends Component {
 
     return (
       <form onSubmit={(e) => this.props.onSubmit(e)}>
-        <div className={`fl-container ${containerClass}`}>
-
+        <div className={`CreatePropertyForm-container ${containerClass}`}>
           <input type="text"
             value={this.props.propertyName} 
             onChange={(e) => this.props.onChange(e)}

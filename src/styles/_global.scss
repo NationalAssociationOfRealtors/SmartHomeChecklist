@@ -16,6 +16,16 @@ a {
   text-decoration: none;
 }
 
+.container {
+  max-width: 36em;
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: 40em) {
+    margin: 0 auto;
+  }
+}
+
 .App-loading, .App-connection-error {
   text-align: center;
   font-size: 1.25em;
@@ -29,12 +39,13 @@ a {
 }
 
 .App-logo {
-  padding: 0.5em 1em;
   border-bottom: 1px solid #c29dd5;
   overflow: hidden;
-  
+  padding: 0.5em;
+
   img {
     float: left;
+    margin-left: 1em;
     margin-right: 1em;
   }
 
