@@ -55,7 +55,7 @@ class PropertyShare extends Component {
     return (
       <div className="container">
         <div className={`PropertyShare-container ${containerClass}`}>
-          <input type="text"
+          <input type="email"
             value={this.state.email} 
             onChange={(e) => this.handleEmailChange(e)}
             onFocus={() => this.onFocus()}
