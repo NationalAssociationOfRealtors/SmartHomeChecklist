@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import _ from 'lodash';
 import PropertyUtils from '../utils/PropertyUtils';
 import PropertyForm from './shared/PropertyForm';
@@ -26,7 +26,11 @@ class Home extends Component {
   handlePropertyFormSubmit(event) {
     event.preventDefault(); 
     
-    this.props.methods.createProperty(PropertyUtils.newProperty(this.state.propertyName))
+    const property = PropertyUtils.newProperty(this.state.propertyName);
+
+    this.props.methods.createProperty(property, () => {
+      browserHistory.push(`/property/${property.id}/productGroups`);
+    });
   }
 
   render() {    
