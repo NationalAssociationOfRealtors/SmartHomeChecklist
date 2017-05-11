@@ -52,7 +52,7 @@ class PropertyProductGroup extends Component {
     return (
       <div className="PropertyProductGroup-container">
         <div className="breadcrumb">
-          <Link to={`/property/${propertyId}/productGroups`}>&laquo; {groupSlug}</Link>
+          <Link to={`/property/${propertyId}/productGroups`}>&laquo; Back</Link>
         </div>
 
         <div className="products">
