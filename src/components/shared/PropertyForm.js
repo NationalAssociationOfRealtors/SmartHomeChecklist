@@ -12,6 +12,7 @@ class PropertyForm extends Component {
             placeholder="Property Name"
             onChange={(e) => this.props.onChange(e)}
             required  
+            autoFocus
           />
 
           <span>(be mindful; your clients may see this name)</span>
