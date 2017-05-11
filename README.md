@@ -16,5 +16,5 @@ REACT_APP_BASE_URL=http://localhost:3000 yarn start
 
 Build the app for production to the build folder:
 ```
-REACT_APP_BASE_URL=https://DOMAIN.COM yarn build
+REACT_APP_BASE_URL=https://DOMAIN.COM REACT_APP_GA_ID=UA-70365075-4 yarn build
 ```
