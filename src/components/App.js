@@ -5,6 +5,7 @@ import PropertyUtils from '../utils/PropertyUtils'
 import ProductUtils from '../utils/ProductUtils'
 import logo from '../images/checkbox.svg';
 import '../styles/main.css';
+import icons from '../icons.js';
 
 class App extends Component {
   constructor(props) {
@@ -24,10 +25,26 @@ class App extends Component {
     this.setState({products: ProductUtils.getFromStorage()});
     
     // Fetch new products from remote csv
-    this.fetchProperties()
+    this.fetchProperties();
 
     // Poll for new products every 5 minutes
-    setInterval(() => this.fetchProperties(), 1000*60*5)
+    setInterval(() => this.fetchProperties(), 1000*60*5);
+
+    // Preload product group icons
+    this.preloadImages();
+  }
+
+  preloadImages() {
+    const images = [];
+
+    _.values(icons).map(svg => {
+      const image = new Image();
+      image.src = svg;
+      
+      return images.push(image);
+    });
+
+    return images;
   }
 
   fetchProperties() {

@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import _ from 'lodash';
-import moreIcon from '../images/categories/more.svg';
-
-// Map icons to groups in groups.json
-const icons = {
-  "Thermostats": require('../images/categories/thermostats.svg'),
-  "Lighting": require('../images/categories/lighting.svg'),
-  "Locks": require('../images/categories/locks.svg'),
-  "Appliances": require('../images/categories/appliances.svg'),
-  "Cameras": require('../images/categories/cameras.svg')
-};
+import icons from '../icons.js';
 
 class PropertyProductGroups extends Component {
   componentWillMount() {
@@ -53,7 +44,7 @@ class PropertyProductGroups extends Component {
           })}
 
           <Link to={`/property/${propertyId}/productGroupsAll`} className="category-icon">
-            <img src={moreIcon} width="100%" alt="More" />
+            <img src={icons["All Devices"]} width="100%" alt="More" />
             <span>All devices</span>
           </Link>
         </div>
