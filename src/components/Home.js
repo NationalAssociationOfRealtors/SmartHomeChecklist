@@ -59,7 +59,7 @@ class Home extends Component {
         </div>
 
         <div className="Home-properties">
-          {_.keys(properties).map(id => {
+          {_.keys(properties).reverse().map(id => {
             return (
               <div key={id} className="property">
                 <Link to={`/property/${id}`}>{properties[id].name}</Link>
