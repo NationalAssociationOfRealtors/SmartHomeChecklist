@@ -13,6 +13,27 @@ const icons = {
 };
 
 class PropertyProductGroups extends Component {
+  componentWillMount() {
+    this.preloadImages()
+  }
+
+  // Preloads first image in each group
+  preloadImages() {
+    const {products} = this.props;
+    const groups = _.keys(products.byGroup);
+    const images = [];
+
+    groups.map(name => {
+      const productId = products.byGroup[name][0]
+      const image = new Image();
+
+      image.src = products.byId[productId].image;        
+      return images.push(image);
+    });
+
+    return images;
+  }
+
   render() {
     const {propertyId, products} = this.props;
     const groups = _.keys(products.byGroup);

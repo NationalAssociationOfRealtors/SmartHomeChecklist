@@ -56,7 +56,6 @@ class PropertyChecklist extends Component {
             </div>
           </div>
         }
-
       </div>
     );
   }

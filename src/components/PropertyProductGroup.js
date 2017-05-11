@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import SwipeableViews from 'react-swipeable-views';
+import _ from 'lodash';
 
 class PropertyProductGroup extends Component {
   constructor(props) {
@@ -15,11 +16,12 @@ class PropertyProductGroup extends Component {
     this.preloadImages()
   }
 
-  preloadImages() {
+  // Preloads next image in list
+  preloadImages(index = 0) {
     const {products} = this.props;
     const images = [];
 
-    this.productsByGroup().map(id => {
+    this.productsByGroup().slice(index+1, index+2).map(id => {
       const image = new Image();
       image.src = products.byId[id].image;
       
@@ -51,10 +53,14 @@ class PropertyProductGroup extends Component {
     return this.props.methods.addProduct(this.props.propertyId, productId)
   }
 
-  showSlide(index) {
-    this.setState({
-      slideIndex: index
-    });
+  setSlideIndex(index) {
+    if (_.isInteger(index)) { // Only handle fully-swiped views
+      this.setState({
+        slideIndex: index
+      }, () => {
+        return this.preloadImages(index)
+      });
+    }
   }
 
   render() {
@@ -66,23 +72,23 @@ class PropertyProductGroup extends Component {
     return (
       <div className="PropertyProductGroup-container">
         <div className="breadcrumb">
-          <Link to={`/property/${propertyId}/productGroups`}>&laquo; Back</Link>
+          <Link onClick={browserHistory.goBack}>&laquo; Back</Link>
         </div>
 
         <div className="products">
-          <SwipeableViews index={this.state.slideIndex}>
+          <SwipeableViews index={this.state.slideIndex} onSwitching={(index) => this.setSlideIndex(index)}>
             {productsByGroup.map((id, index) => {
               return (
                 <div className="product-view" key={id}>
                   <div className="product-header">
                     <span className="counter">
                       {index > 0 && 
-                        <button className="arrow" onClick={() => this.showSlide(index-1)}>&laquo;</button>}
+                        <button className="arrow" onClick={() => this.setSlideIndex(index-1)}>&laquo;</button>}
 
                       {index+1} of {productsByGroup.length}
 
                       {(index+1) < productsByGroup.length && 
-                        <button className="arrow" onClick={() => this.showSlide(index+1)}>&raquo;</button>}
+                        <button className="arrow" onClick={() => this.setSlideIndex(index+1)}>&raquo;</button>}
                     </span>
                     <span className="product-name">{products.byId[id].device_name}</span>
                   </div>
