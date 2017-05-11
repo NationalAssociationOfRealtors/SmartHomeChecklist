@@ -37,7 +37,7 @@ class CreatePropertyForm extends Component {
 
           <span className="label onBlur">Hi.</span>
 
-          <label onClick={() => this.onLabelClick()}>{this.props.labelText}</label>
+          <label>{this.props.labelText}</label>
 
           <span className="help onFocus">{this.props.helpText}</span>
 

@@ -6,7 +6,8 @@ class PropertyShare extends Component {
     super(props);
 
     this.state = {
-      email: ''
+      email: '',
+      focused: false
     };
   }
 
@@ -29,6 +30,18 @@ class PropertyShare extends Component {
     return `mailto:${email}?subject=${escape(`Smart Home Checklist for ${property.name}`)}&body=${escape(this.shareUrl())}`;
   }
 
+  onFocus() {
+    this.setState({
+      focused: true
+    });
+  }
+
+  onBlur() {
+    this.setState({
+      focused: false
+    });
+  }
+
   isValidEmail(email) {
     var regex = /\S+@\S+\.\S+/;
 
@@ -37,18 +50,22 @@ class PropertyShare extends Component {
 
   render() {
     const isValidEmail = this.isValidEmail(this.state.email);
+    const containerClass = this.state.focused || this.state.email ? 'focused' : '';
 
     return (
       <div className="container">
-        <div className="PropertyShare-container">
+        <div className={`PropertyShare-container ${containerClass}`}>
           <input type="text"
             value={this.state.email} 
-            placeholder="Email Address"
             onChange={(e) => this.handleEmailChange(e)}
+            onFocus={() => this.onFocus()}
+            onBlur={() => this.onBlur()}
             required  
             />
-          
-          {isValidEmail ? <a target="_blank" href={this.mailTo()}>Share</a> : <span>Share</span>}
+
+          <label onClick={() => this.onLabelClick()}>Recipient's email address</label>
+
+          {isValidEmail ? <a target="_blank" href={this.mailTo()} className="onFocus">Share</a> : <span className="onFocus">Share</span>}
         </div>
       </div>
     );
