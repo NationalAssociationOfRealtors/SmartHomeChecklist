@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
+import querystring from 'querystring';
 
-class PropertyChecklist extends Component {  
+class PropertyChecklist extends Component { 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hideAlert: false
+    };
+  }
+  
   componentWillMount() {
     this.preloadImages()
+  }
+
+  // When a product is added to a list, user is redirected with query string ?saved=1
+  shouldDisplayAlert() {
+    const {saved} = querystring.parse(window.location.search.substr(1));
+
+    return !!saved && !this.state.hideAlert;
+  }
+
+  hideAlert() {
+    this.setState({
+      hideAlert: true
+    });
   }
 
   preloadImages() {
@@ -25,6 +47,13 @@ class PropertyChecklist extends Component {
 
     return (
       <div className="PropertyChecklist-container">
+        {this.shouldDisplayAlert() &&
+          <div className="alert">
+            <button onClick={() => this.hideAlert()}>hide</button>
+            Device successfully added
+          </div>
+        }
+
         {property.products.length > 0 &&
           <div>
             <div className="PropertyChecklist-products">

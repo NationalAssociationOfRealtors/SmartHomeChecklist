@@ -50,7 +50,12 @@ class PropertyProductGroup extends Component {
   }
 
   handleAddProduct(productId) {
-    return this.props.methods.addProduct(this.props.propertyId, productId)
+    const {propertyId} = this.props;
+
+    return this.props.methods.addProduct(propertyId, productId, () => {
+      // Indicate that product was saved in query string
+      browserHistory.push(`/property/${propertyId}?saved=1`);
+    });
   }
 
   setSlideIndex(index) {

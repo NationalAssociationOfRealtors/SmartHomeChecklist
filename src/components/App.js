@@ -84,7 +84,7 @@ class App extends Component {
     });
   }
 
-  addProduct(propertyId, productId) {
+  addProduct(propertyId, productId, callback) {
     this.setState((state, props) => {
       const {properties} = state;
 
@@ -95,7 +95,7 @@ class App extends Component {
       PropertyUtils.setToStorage(properties);
 
       return {properties: properties}
-    });
+    }, callback);
   }
 
   deleteProduct(propertyId, productId, callback) {
