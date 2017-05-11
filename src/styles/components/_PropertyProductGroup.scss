@@ -24,11 +24,18 @@
 
       .counter {
         float: right;
-        font-size: 0.85em;
-        padding-left: 1.5em;
+        color: #6a1b9a;
+        font-size: 1em;
+        padding-left: 1em;
         padding-top: 0.35em;
         padding-bottom: 2.5em;
         font-style: italic;
+
+        .arrow {
+          font-weight: bold;
+          color: #6a1b9a;
+          font-size: 1.25em;
+        }
       }
     }
 

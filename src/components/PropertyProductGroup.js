@@ -3,6 +3,14 @@ import { Link } from 'react-router'
 import SwipeableViews from 'react-swipeable-views';
 
 class PropertyProductGroup extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      slideIndex: 0
+    };
+  }
+
   componentWillMount() {
     this.preloadImages()
   }
@@ -43,6 +51,12 @@ class PropertyProductGroup extends Component {
     return this.props.methods.addProduct(this.props.propertyId, productId)
   }
 
+  showSlide(index) {
+    this.setState({
+      slideIndex: index
+    });
+  }
+
   render() {
     const {products, propertyId} = this.props;
     const {groupSlug} = this.props.params;
@@ -56,12 +70,20 @@ class PropertyProductGroup extends Component {
         </div>
 
         <div className="products">
-          <SwipeableViews>
+          <SwipeableViews index={this.state.slideIndex}>
             {productsByGroup.map((id, index) => {
               return (
                 <div className="product-view" key={id}>
                   <div className="product-header">
-                    <span className="counter">{index+1} of {productsByGroup.length}</span>
+                    <span className="counter">
+                      {index > 0 && 
+                        <button className="arrow" onClick={() => this.showSlide(index-1)}>&laquo;</button>}
+
+                      {index+1} of {productsByGroup.length}
+
+                      {(index+1) < productsByGroup.length && 
+                        <button className="arrow" onClick={() => this.showSlide(index+1)}>&raquo;</button>}
+                    </span>
                     <span className="product-name">{products.byId[id].device_name}</span>
                   </div>
                   <div className="product-image">
