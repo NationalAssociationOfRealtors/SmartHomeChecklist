@@ -63,7 +63,7 @@ class PropertyShare extends Component {
             required  
             />
 
-          <label onClick={() => this.onLabelClick()}>Recipient's email address</label>
+          <label>Recipient's email address</label>
 
           {isValidEmail ? <a target="_blank" href={this.mailTo()} className="onFocus">Share</a> : <span className="onFocus">Share</span>}
         </div>

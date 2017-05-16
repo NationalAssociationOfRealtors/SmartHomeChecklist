@@ -8,4 +8,46 @@
   a {
     font-size: 1.25em;
   }
+
+  form.RenameProperty {
+    position: relative;
+
+    input[type="text"] {
+      background: white;
+      color: #444;
+      width: 100%;
+      padding: 0.4em 0;
+      text-indent: $inputTextIndent;
+      font-size: 1.25em;
+      outline: 0;
+    }
+
+    .onFocus {
+      display: none;
+    }
+
+    &.editing {
+      .onFocus {
+        display: block;
+      }
+
+      .onBlur {
+        display: none;
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      background: none;
+      border: none;
+      padding: 0;
+      float: right;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      border-bottom: 3px solid #9ccc65;
+      text-transform: uppercase;
+    }
+  }
 }
