@@ -17,13 +17,16 @@ class ReceiveProperty extends Component {
     // Get params from query string
     const {name, products} = querystring.parse(window.location.search.substr(1));
 
+    // If only one product was included, convert to array
+    const productsArray = Array.isArray(products) ? products : [products];
+
     // Create property object
-    const property = PropertyUtils.newProperty(name, products);
+    const property = PropertyUtils.newProperty(name, productsArray);
 
     // Save property
     this.props.methods.createProperty(property, () => {
       // Redirect user to property
-      browserHistory.push(`/property/${property.id}`);
+      browserHistory.push(`/`);
     });
   }
 
