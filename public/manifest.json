@@ -1,0 +1,43 @@
+{
+  "name": "Smart Home Checklist",
+  "short_name": "Smart Home Checklist",
+  "start_url": "./?utm_source=web_app_manifest",
+  "display": "standalone",
+  "background_color": "#6A1B9A",
+  "theme_color": "#FFF",
+  "description": "Transfer ownership of smart devices wisely",
+  "orientation": "portrait",
+  "icons": [{
+    "src": "icons/16.png",
+    "sizes": "16x16",
+    "type": "image/png"
+  }, {
+    "src": "/icons/32.png",
+    "sizes": "32x32",
+    "type": "image/png"
+  }, {
+    "src": "/icons/57.png",
+    "sizes": "57x57",
+    "type": "image/png"
+  }, {
+    "src": "/icons/76.png",
+    "sizes": "76x76",
+    "type": "image/png"
+  }, {
+    "src": "/icons/120.png",
+    "sizes": "120x120",
+    "type": "image/png"
+  }, {
+    "src": "/icons/152.png",
+    "sizes": "152x152",
+    "type": "image/png"
+  }, {
+    "src": "/icons/180.png",
+    "sizes": "180x180",
+    "type": "image/png"
+  }, {
+    "src": "/icons/196.png",
+    "sizes": "196x196",
+    "type": "image/png"
+  }]
+}
