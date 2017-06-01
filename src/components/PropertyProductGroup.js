@@ -24,7 +24,7 @@ class PropertyProductGroup extends Component {
     this.productsByGroup().slice(index+1, index+2).map(id => {
       const image = new Image();
       image.src = products.byId[id].image;
-      
+
       return images.push(image);
     });
 
@@ -90,12 +90,12 @@ class PropertyProductGroup extends Component {
                   <div className="product-view" key={id}>
                     <div className="product-header">
                       <span className="counter">
-                        {index > 0 && 
+                        {index > 0 &&
                           <button className="arrow" onClick={() => this.setSlideIndex(index-1)}>&laquo;</button>}
 
                         {index+1} of {productsByGroup.length}
 
-                        {(index+1) < productsByGroup.length && 
+                        {(index+1) < productsByGroup.length &&
                           <button className="arrow" onClick={() => this.setSlideIndex(index+1)}>&raquo;</button>}
                       </span>
                       <span className="product-name">{products.byId[id].device_name}</span>

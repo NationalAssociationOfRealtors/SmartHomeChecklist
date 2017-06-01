@@ -23,7 +23,7 @@ class App extends Component {
 
     // Get products from localStorage
     this.setState({products: ProductUtils.getFromStorage()});
-    
+
     // Fetch new products from remote csv
     this.fetchProperties();
 
@@ -40,7 +40,7 @@ class App extends Component {
     _.values(icons).map(svg => {
       const image = new Image();
       image.src = svg;
-      
+
       return images.push(image);
     });
 
@@ -57,7 +57,7 @@ class App extends Component {
   }
 
   createProperty(property, callback) {
-    this.setState((state, props) => {      
+    this.setState((state, props) => {
       const {properties} = state;
 
       // Add new property to user's properties
@@ -71,7 +71,7 @@ class App extends Component {
   }
 
   renameProperty(id, name, callback) {
-    this.setState((state, props) => {      
+    this.setState((state, props) => {
       const {properties} = state;
 
       // Rename property
@@ -88,7 +88,7 @@ class App extends Component {
   }
 
   deleteProperty(id) {
-    this.setState((state, props) => {      
+    this.setState((state, props) => {
       let {properties} = state;
 
       // Remove property
@@ -122,7 +122,7 @@ class App extends Component {
 
       // Delete product
       properties[propertyId].products = _.remove(products, (id) => {
-        // TODO - figure out why !== works correctly instead of == 
+        // TODO - figure out why !== works correctly instead of ==
         // https://lodash.com/docs/4.17.4#remove
         return id !== productId;
       });
