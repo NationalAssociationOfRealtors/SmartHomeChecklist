@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import _ from 'lodash';
+import ProductUtils from '../utils/ProductUtils';
 
 class PropertyProductGroupsAll extends Component {
   render() {
     const {propertyId, products} = this.props;
     const groups = _.keys(products.byGroup);
+    const groupSlugs = ProductUtils.groupSlugMapping(_.keys(this.props.products.byGroup));
 
     return (
       <div className="PropertyProductGroups-container">
@@ -15,7 +17,7 @@ class PropertyProductGroupsAll extends Component {
             {_.sortBy(groups, [function(i) { return i; }]).map(name => {
               return (
                 <div key={name}>
-                  <Link to={`/property/${propertyId}/group/${name}`} key={name}>
+                  <Link to={`/property/${propertyId}/group/${groupSlugs[name]}`} key={name}>
                     {name}
                   </Link>
                 </div>

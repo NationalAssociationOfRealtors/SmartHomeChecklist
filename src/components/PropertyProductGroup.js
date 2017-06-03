@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router'
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
+import ProductUtils from '../utils/ProductUtils';
 
 class PropertyProductGroup extends Component {
   constructor(props) {
@@ -46,7 +47,9 @@ class PropertyProductGroup extends Component {
     const {products} = this.props;
     const {groupSlug} = this.props.params;
 
-    return products.byGroup[groupSlug];
+    const slugToNameMappings = ProductUtils.groupSlugMapping(_.keys(this.props.products.byGroup));
+
+    return products.byGroup[slugToNameMappings[groupSlug]];
   }
 
   handleAddProduct(productId) {

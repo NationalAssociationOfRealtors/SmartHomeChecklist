@@ -68,6 +68,24 @@ const ProductUtils = {
       byGroup: byGroup
     };
   },
+
+  groupSlugMapping(groupNames) {
+    const mappings = {};
+
+    groupNames.forEach(name => {
+      // Map name to slug
+      mappings[name] =  name.toLowerCase()
+        .replace(/[^\w ]+/g,'')
+        .replace(/ +/g,'-');
+    });
+
+    // Reverse mappings
+    _.keys(mappings).forEach(name => {
+      mappings[mappings[name]] = name;
+    });
+
+    return mappings;
+  }
 }
 
 export default ProductUtils;

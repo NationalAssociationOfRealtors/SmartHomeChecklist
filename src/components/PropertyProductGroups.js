@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 import _ from 'lodash';
 import icons from '../icons.js';
+import ProductUtils from '../utils/ProductUtils';
 
 class PropertyProductGroups extends Component {
   componentWillMount() {
@@ -28,6 +29,7 @@ class PropertyProductGroups extends Component {
   render() {
     const {propertyId, products} = this.props;
     const groups = _.keys(products.byGroup);
+    const groupSlugs = ProductUtils.groupSlugMapping(_.keys(this.props.products.byGroup));
 
     return (
       <div className="PropertyProductGroups-container">
@@ -37,7 +39,7 @@ class PropertyProductGroups extends Component {
           {groups.map(name => {
             if (icons[name]) {
               return (
-                <Link to={`/property/${propertyId}/group/${name}`} className="category-icon" key={name}>
+                <Link to={`/property/${propertyId}/group/${groupSlugs[name]}`} className="category-icon" key={name}>
                   <img src={icons[name]} width="100%" alt={name} />
                   <span>{name}</span>
                 </Link>
