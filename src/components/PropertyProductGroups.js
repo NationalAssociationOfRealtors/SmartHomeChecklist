@@ -32,6 +32,8 @@ class PropertyProductGroups extends Component {
     return (
       <div className="PropertyProductGroups-container">
         <div className="container">
+          <h3>Add some smart devices</h3>
+
           {groups.map(name => {
             if (icons[name]) {
               return (
