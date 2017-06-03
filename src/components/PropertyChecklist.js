@@ -49,8 +49,7 @@ class PropertyChecklist extends Component {
       <div className="PropertyChecklist-container">
         {this.shouldDisplayAlert() &&
           <div className="container">
-            <div className="alert">
-              <button onClick={() => this.hideAlert()}>hide</button>
+            <div className="alert" onClick={() => this.hideAlert()}>
               Device successfully added
             </div>
           </div>
