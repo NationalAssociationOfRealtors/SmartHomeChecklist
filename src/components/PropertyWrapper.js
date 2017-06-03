@@ -71,7 +71,7 @@ class PropertyWrapper extends Component {
               <div className="inner">
                 {this.isChecklistRoute() && 
                   <form onSubmit={(e) => this.onSubmit(e)} className={`RenameProperty ${containerClass}`}>
-                    <a className="onBlur" onClick={() => { this.editProperty()}}>{property.name}</a>
+                    <a className="onBlur editable" onClick={() => { this.editProperty()}}>{property.name}</a>
 
                     <input type="text"
                       value={this.state.propertyName} 
