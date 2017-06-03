@@ -101,7 +101,10 @@ class PropertyProductGroup extends Component {
                       <span className="product-name">{products.byId[id].device_name}</span>
                     </div>
                     <div className="product-image">
-                      <img alt={products.byId[id].device_name} src={products.byId[id].image} width="60%" />
+                      {index == this.state.slideIndex &&
+                        <img alt={products.byId[id].device_name} src={products.byId[id].image} width="60%" />}
+                      {index !== this.state.slideIndex &&
+                        <img alt={products.byId[id].device_name} width="60%" />}                        
                     </div>
                     <div className="actions">
                       {!productsInList[id] && <button className="button" onClick={() => this.handleAddProduct(id)}>Add to list</button>}
