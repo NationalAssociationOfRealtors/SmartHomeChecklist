@@ -36,10 +36,10 @@ class App extends Component {
     this.setState({products: ProductUtils.getFromStorage()});
 
     // Fetch new products from remote csv
-    this.fetchProperties();
+    this.fetchProducts();
 
     // Poll for new products every 5 minutes
-    setInterval(() => this.fetchProperties(), 1000*60*5);
+    setInterval(() => this.fetchProducts(), 1000*60*5);
 
     // Preload product group icons
     this.preloadImages();
@@ -58,7 +58,7 @@ class App extends Component {
     return images;
   }
 
-  fetchProperties() {
+  fetchProducts() {
     // Fetch new products from remote csv
     ProductUtils.fetch().then(products => {
       ProductUtils.setToStorage(products)
