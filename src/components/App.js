@@ -18,6 +18,17 @@ class App extends Component {
   }
 
   componentWillMount() {
+    // Test for localStorage
+    try {
+      localStorage.setObject('test', true);
+    } catch (e) {
+      if (e.name == 'QuotaExceededError') {
+        alert('Please quit out of Private Browsing mode');
+      } else {
+        throw e; 
+      }
+    }
+
     // Get properties from localStorage
     this.setState({properties: PropertyUtils.getFromStorage()});
 
