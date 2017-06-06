@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import _ from 'lodash';
 
 class PropertyWrapper extends Component {
+  state = {}
+
   constructor(props) {
     super(props);
 
-    const {propertyId} = props.params;
-    const property = props.properties[propertyId];
+    const property = this.getProperty();
 
-    this.state = {
-      editing: false,
-      propertyName: property.name
+    if (property) {
+      this.state = {
+        editing: false,
+        propertyName: property.name
+      };
+    };
+  }
+
+  getProperty() {
+    const { params: { propertyId }, properties } = this.props;
+
+    return properties[propertyId];
+  }
+
+  componentWillMount() {
+    if (!this.getProperty()) {
+      browserHistory.push('/');
     };
   }
 
@@ -23,7 +38,7 @@ class PropertyWrapper extends Component {
     if (count === 2) {
       return true;
     }
-    
+
     return false;
   }
 
@@ -41,7 +56,7 @@ class PropertyWrapper extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    
+
     const {propertyId} = this.props.params;
     const {methods} = this.props;
     const {propertyName} = this.state;
@@ -55,7 +70,12 @@ class PropertyWrapper extends Component {
 
   render() {
     const propertyId = this.props.params.propertyId;
-    const property = this.props.properties[propertyId];
+    const property = this.getProperty();
+
+    if (!property) {
+      return null;
+    };
+
     const propsForChildren = {...this.props, propertyId, property};
     const containerClass = this.state.editing ? 'editing' : '';
 
@@ -69,22 +89,22 @@ class PropertyWrapper extends Component {
           <div className="PropertyWrapper-header">
             <div className="container">
               <div className="inner">
-                {this.isChecklistRoute() && 
+                {this.isChecklistRoute() &&
                   <form onSubmit={(e) => this.onSubmit(e)} className={`RenameProperty ${containerClass}`}>
                     <a className="onBlur editable" onClick={() => { this.editProperty()}}>{property.name}</a>
 
                     <input type="text"
-                      value={this.state.propertyName} 
+                      value={this.state.propertyName}
                       onChange={(e) => this.handleNameChange(e)}
                       className="onFocus"
-                      required  
+                      required
                       />
 
                     <input type="submit" className="onFocus" value="Save" />
                   </form>
                 }
 
-                {!this.isChecklistRoute() && 
+                {!this.isChecklistRoute() &&
                   <Link to={`/property/${propertyId}`}>{property.name}</Link>
                 }
               </div>
@@ -97,7 +117,7 @@ class PropertyWrapper extends Component {
     } else {
       return (
         <div className="App-connection-error">
-          No internet connection detected. 
+          No internet connection detected.
           <br />
           <a href="/">Refresh page</a>
         </div>
