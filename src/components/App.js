@@ -4,6 +4,7 @@ import _ from 'lodash';
 import PropertyUtils from '../utils/PropertyUtils'
 import ProductUtils from '../utils/ProductUtils'
 import logo from '../images/checkbox.svg';
+import nar_logo from '../images/master-logo.png'
 import '../styles/main.css';
 import icons from '../icons.js';
 
@@ -25,7 +26,7 @@ class App extends Component {
       if (e.name == 'QuotaExceededError') {
         alert('Please quit out of Private Browsing mode');
       } else {
-        throw e; 
+        throw e;
       }
     }
 
@@ -181,6 +182,25 @@ class App extends Component {
         </div>
 
         {content}
+
+        <div className="App-footer">
+          <div className="container">
+            <div className="footer-text">
+              <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">FEEDBACK</a></li>
+                <li><a href="#">TERMS OF USE</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
+              </ul>
+              <Link to="/"><img src={nar_logo} alt="National Association of Realtors" width="200" /></Link>
+              <br></br>
+              <span>Designed and built by CRT Labs, the technology research and development center of the National Association of REALTORS&#174;.</span>
+              <br></br><br></br>
+              <span>&#169;2017 The National Association of REALTORS&#174;.</span>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
