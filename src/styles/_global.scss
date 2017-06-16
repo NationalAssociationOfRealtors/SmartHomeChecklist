@@ -16,6 +16,60 @@ a {
   text-decoration: none;
 }
 
+.content {
+  min-height: 1100px;
+
+  @media only screen
+    and (min-device-width: 360px)
+    and (max-device-width: 640px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+    min-height: 740px;
+  }
+  @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+    min-height: 540px;
+  }
+  @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 658px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+    min-height: 440px;
+  }
+  @media only screen
+    and (min-device-width: 412px)
+    and (max-device-width: 732px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+    min-height: 500px;
+  }
+  @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: portrait) {
+    min-height: 600px;
+  }
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: 900px;
+  }
+  @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: 1240px;
+  }
+}
+
 .container {
   max-width: 36em;
   overflow: hidden;
@@ -25,6 +79,21 @@ a {
     margin: 0 auto;
   }
 }
+
+.container-text-body {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  line-height: 30px;
+  p {
+    padding: 10px;
+  }
+  a {
+    color: #6d1c9b;
+    text-decoration: none;
+  }
+}
+
 
 .App-loading, .App-connection-error {
   text-align: center;
@@ -76,7 +145,7 @@ a {
   position: absolute;
   padding-bottom: 10px;
   padding-top: 10px;
-  bottom: 0;
+  /*bottom: 0;*/
   width: 100%;
   text-align: center;
   ul {
@@ -144,7 +213,8 @@ a {
       }
       img {
         left: 50%;
-        width: 100%;
+        width: 30%;
+        float:none;
       }
     }
   }
