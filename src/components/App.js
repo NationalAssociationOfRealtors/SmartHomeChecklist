@@ -4,8 +4,10 @@ import _ from 'lodash';
 import PropertyUtils from '../utils/PropertyUtils'
 import ProductUtils from '../utils/ProductUtils'
 import logo from '../images/checkbox.svg';
+import nar_logo from '../images/master-logo.png'
 import '../styles/main.css';
 import icons from '../icons.js';
+//import {Layout, Flex, Fixed} from '.';
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +27,7 @@ class App extends Component {
       if (e.name == 'QuotaExceededError') {
         alert('Please quit out of Private Browsing mode');
       } else {
-        throw e; 
+        throw e;
       }
     }
 
@@ -167,10 +169,10 @@ class App extends Component {
         <div className="App-loading">Loading...</div>
       );
     }
-
     return (
       <div>
-        <div className="App-logo">
+
+        <header className="App-logo">
           <div className="container">
             <Link to="/"><img src={logo} alt="Smart Home Checklist" width="54" /></Link>
             <div className="logo-text">
@@ -178,9 +180,31 @@ class App extends Component {
               <span>Transfer ownership of smart devices wisely</span>
             </div>
           </div>
+        </header>
+
+        <div className="content">
+        {content}
         </div>
 
-        {content}
+        <footer className="App-footer">
+          <div className="container">
+            <div className="footer-text">
+              <ul>
+                <li><Link to={`/`}>HOME</Link></li>
+                <li><a href="https://crtlabs.org/">ABOUT</a></li>
+                <li><a href="mailto:someone@example.com?Subject=Some%20Subject">FEEDBACK</a></li>
+                <li><Link to={`terms`}>TERMS OF USE</Link></li>
+                <li><Link to={`privacy`}>PRIVACY POLICY</Link></li>
+              </ul>
+              <Link to="/"><img src={nar_logo} alt="National Association of Realtors" width="200" /></Link>
+              <br></br>
+              <span>Designed and built by CRT Labs, the technology research and development center of the National Association of REALTORS&#174;.</span>
+              <br></br><br></br>
+              <span>&#169;2017 The National Association of REALTORS&#174;.</span>
+            </div>
+          </div>
+        </footer>
+
       </div>
     );
   }

@@ -11,11 +11,15 @@ import PropertyProductGroup from './components/PropertyProductGroup';
 import PropertyShare from './components/PropertyShare';
 import PropertyProduct from './components/PropertyProduct';
 import ReceiveProperty from './components/ReceiveProperty';
+import Privacy from './components/Privacy';
+import Terms from './components/Terms';
 
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
+      <Route path="/privacy" component={Privacy}></Route>
+      <Route path="/terms" component={Terms}></Route>
       <Route path="/property/:propertyId" component={PropertyWrapper} >
         <IndexRoute component={PropertyChecklist} />
         <Route path="/property/:propertyId/productGroups" component={PropertyProductGroups} />
