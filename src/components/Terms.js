@@ -9,7 +9,7 @@ class Terms extends Component {
     return (
       <div className="container-text-body">
       <div className="container">
-      <br></br>
+      <p>
       <b>TERMS OF USE FOR <a href="">WWW.SMARTHOMECHECKLIST.COM</a></b>
       <br></br><br></br>
       Thank you for visiting the National Association of REALTORS® (“NAR”) website <a href="">www.smarthomechecklist.com</a> (the “Site”) and using the services (“Services”) available through the Site.
@@ -141,6 +141,7 @@ class Terms extends Component {
      <br></br><br></br>
      NAR’s or your failure to exercise any right provided for in these Terms shall not constitute a waiver of any rights under these Terms. If any provision of these Terms is found to be unenforceable, such unenforceability will not affect the validity of the remaining provisions. You may not assign any of your rights under these Terms. NAR may assign its rights under these Terms in whole or in part at any time without your consent. No agency, partnership, joint venture, or employment is created as a result of these Terms.
      <br></br><br></br>
+     </p>
      </div>
      </div>
     );

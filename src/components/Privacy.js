@@ -9,7 +9,6 @@ class Privacy extends Component {
     return (
       <div className="container-text-body">
       <div className="container">
-      <br></br>
       <p><b>PRIVACY POLICY FOR <a href="">WWW.SMARTHOMECHECKLIST.COM</a></b>
       <br></br><br></br>
       Thanks for visiting www.smarthomechecklist.com. The National Association of REALTORS® (“NAR”) takes its obligation to safeguard and secure your personal information very seriously. This Privacy Policy (“Policy”) outlines NAR’s privacy practices and describes how NAR treats any personal information collected while you use www.smarthomechecklist.com (the “Site”) and NAR’s services (“Services”) available through the Site. You consent to the collection of your personal information, as outlined herein, by accessing and using the Site and Services.
