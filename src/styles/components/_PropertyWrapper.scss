@@ -4,12 +4,12 @@
   .inner {
     padding: 1em;
   }
-  
+
   a {
     font-size: 1.25em;
 
     &.editable {
-      border-bottom: 3px solid #9ccc65;
+      font-weight: bold;
     }
   }
 
