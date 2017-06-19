@@ -12,7 +12,7 @@ class ReceiveProperty extends Component {
       propertySaved: false
     };
   }
-  //http://localhost:3000/receive?name=Home&products=58dc689919d01b16336dcdbc
+
   componentWillMount() {
     // Get params from query string
     const {name, products} = querystring.parse(window.location.search.substr(1));
