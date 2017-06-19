@@ -25,6 +25,8 @@ class ReceiveProperty extends Component {
       // Redirect user to property
       if (property['id'] != undefined) {
         browserHistory.push(`/property/` + property['id']);
+      } else {
+        browserHistory.push(`/`);
       }
     });
   }
