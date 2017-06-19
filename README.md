@@ -18,3 +18,12 @@ Build the app for production to the build folder:
 ```
 REACT_APP_BASE_URL=https://DOMAIN.COM REACT_APP_GA_ID=UA-70365075-4 yarn build
 ```
+Build service worker script to the build folder
+```
+node build_sw
+```
+Run build:
+```
+yarn global add serve
+serve -s build
+```
