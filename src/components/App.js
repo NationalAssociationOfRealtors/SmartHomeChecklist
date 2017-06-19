@@ -191,8 +191,8 @@ class App extends Component {
             <div className="footer-text">
               <ul>
                 <li><Link to={`/`}>HOME</Link></li>
-                <li><a href="https://crtlabs.org/">ABOUT</a></li>
-                <li><a href="mailto:someone@example.com?Subject=Some%20Subject">FEEDBACK</a></li>
+                <li><a href="https://crtlabs.org/about">ABOUT</a></li>
+                <li><a href="mailto:feedback@crtlabs.org?Subject=Feedback">FEEDBACK</a></li>
                 <li><Link to={`terms`}>TERMS OF USE</Link></li>
                 <li><Link to={`privacy`}>PRIVACY POLICY</Link></li>
               </ul>
