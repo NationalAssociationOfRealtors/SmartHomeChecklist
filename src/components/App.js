@@ -192,7 +192,7 @@ class App extends Component {
               <ul>
                 <li><Link to={`/`}>HOME</Link></li>
                 <li><a href="https://crtlabs.org/about">ABOUT</a></li>
-                <li><a href="mailto:feedback@crtlabs.org?Subject=Feedback">FEEDBACK</a></li>
+                <li><a href="mailto:feedback@crtlabs.org?Subject=Smart%20Home%20Checklist%20Feedback">FEEDBACK</a></li>
                 <li><Link to={`terms`}>TERMS OF USE</Link></li>
                 <li><Link to={`privacy`}>PRIVACY POLICY</Link></li>
               </ul>
