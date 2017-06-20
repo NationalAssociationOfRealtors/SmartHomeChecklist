@@ -10,6 +10,7 @@
   .PropertyChecklist-products {
     overflow: hidden;
     margin: 1em;
+    padding-right: 15px;
 
     div {
       margin-bottom: 1.15em;
@@ -23,6 +24,7 @@
     }
 
     .add-more {
+      margin-top: 10px;
       font-size: 1.25em;
       float: right;
       text-transform: uppercase;

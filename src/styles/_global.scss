@@ -1,22 +1,7 @@
-/*body, html {
-  font-size: 100%;
-  min-height: 100%;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  box-sizing: border-box;
-}*/
 html {
   box-sizing: border-box;
   height: 100%;
 }
-/*
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-*/
 body {
   background: -webkit-gradient(linear, left top, left bottom, from(#6a1b9a), to(#a43ab7)) fixed;
   background-color: #6a1b9a;
@@ -147,7 +132,7 @@ a {
     text-align: center;
     padding: 5px 16px 5px 0px;
     text-decoration: none;
-    font-size: 0.1em;
+    font-size: 0.6em;
   }
   li a:hover {
     /*color: #9231ae;*/
@@ -183,7 +168,7 @@ a {
       text-align: center;
       padding: 10px 10px 10px 10px;
       text-decoration: none;
-      font-size: 0.1em;
+      font-size: 0.4em;
     }
     .footer-text {
       text-align: center;
