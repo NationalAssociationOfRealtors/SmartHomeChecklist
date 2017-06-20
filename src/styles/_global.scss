@@ -1,14 +1,49 @@
-body, html {
+/*body, html {
   font-size: 100%;
   min-height: 100%;
   padding: 0;
   margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+}*/
+html {
+  box-sizing: border-box;
+  height: 100%;
 }
-
+/*
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+*/
 body {
-  @include vertical-gradient(#6a1b9a, #a43ab7);
+  background: -webkit-gradient(linear, left top, left bottom, from(#6a1b9a), to(#a43ab7)) fixed;
+  background-color: #6a1b9a;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-attachment:fixed;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 100%;
+}
+
+.demo {
+  margin: 0 auto;
+  padding-top: 64px;
+  max-width: 640px;
+  width: 94%;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
 }
 
 a {
@@ -17,57 +52,6 @@ a {
 }
 
 .content {
-  min-height: 1100px;
-
-  @media only screen
-    and (min-device-width: 360px)
-    and (max-device-width: 640px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: portrait) {
-    min-height: 740px;
-  }
-  @media only screen
-    and (min-device-width: 375px)
-    and (max-device-width: 667px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: portrait) {
-    min-height: 540px;
-  }
-  @media only screen
-    and (min-device-width: 320px)
-    and (max-device-width: 658px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: portrait) {
-    min-height: 440px;
-  }
-  @media only screen
-    and (min-device-width: 412px)
-    and (max-device-width: 732px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: portrait) {
-    min-height: 500px;
-  }
-  @media only screen
-    and (min-device-width: 414px)
-    and (max-device-width: 736px)
-    and (-webkit-min-device-pixel-ratio: 3)
-    and (orientation: portrait) {
-    min-height: 600px;
-  }
-  @media only screen
-    and (min-device-width: 768px)
-    and (max-device-width: 1024px)
-    and (orientation: portrait)
-    and (-webkit-min-device-pixel-ratio: 2) {
-    min-height: 900px;
-  }
-  @media only screen
-    and (min-device-width: 1024px)
-    and (max-device-width: 1366px)
-    and (orientation: portrait)
-    and (-webkit-min-device-pixel-ratio: 2) {
-    min-height: 1240px;
-  }
 }
 
 .container {
@@ -145,7 +129,6 @@ a {
   position: absolute;
   padding-bottom: 10px;
   padding-top: 10px;
-  /*bottom: 0;*/
   width: 100%;
   text-align: center;
   ul {

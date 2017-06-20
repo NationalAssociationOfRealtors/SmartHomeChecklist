@@ -23,12 +23,12 @@
     }
 
     .add-more {
-      margin-top: 0.5em;
       font-size: 1.25em;
-      border-bottom: 3px solid #9ccc65;
       float: right;
-      font-weight: bold;
       text-transform: uppercase;
+      text-align: center;
+      padding: 11px;
+      background-color: #9ccc65;
     }
   }
 
@@ -37,7 +37,8 @@
     margin-top: 2em;
 
     .inner {
-      padding: 2em 1em;
+      padding-top: 2em;
+      padding-bottom: 2em;
       text-align: center;
     }
 
@@ -48,13 +49,13 @@
     }
 
     a {
-      margin-top: 0.5em;
       font-size: 1.25em;
-      border-bottom: 3px solid #9ccc65;
-      left: 50%;
-      font-weight: bold;
       text-transform: uppercase;
-      width: 100%;
+      text-align: center;
+      padding: 11px;
+      background-color: #9ccc65;
+      display: inline-block;
+      width: 80%;
     }
   }
 }
