@@ -183,20 +183,25 @@ class App extends Component {
       <div className="footer">
       <footer className="App-footer">
         <div className="container">
-          <div className="footer-text">
-            <ul>
+        <div className="wrapper">
+        <div className="left">
+          <ul>
             <li><Link to={`/`}>HOME</Link></li>
             <li><a href="https://crtlabs.org/about">ABOUT</a></li>
             <li><a href="mailto:feedback@crtlabs.org?Subject=Smart%20Home%20Checklist%20Feedback">FEEDBACK</a></li>
             <li><Link to={`terms`}>TERMS OF USE</Link></li>
             <li><Link to={`privacy`}>PRIVACY POLICY</Link></li>
             </ul>
-            <Link to="/"><img src={nar_logo} alt="National Association of Realtors" width="200" /></Link>
-            <br></br>
-            <span>Designed and built by CRT Labs, the technology research and development center of the National Association of REALTORS&#174;.</span>
-            <br></br><br></br>
-            <span>&#169;2017 The National Association of REALTORS&#174;.</span>
-          </div>
+        </div>
+        <div className="right">
+          <Link to="/"><img src={nar_logo} alt="National Association of Realtors" width="200" /></Link>
+        </div>
+        <div className="bottom">
+          <span>Designed and built by CRT Labs, the technology research and development center of the National Association of REALTORS&#174;.</span>
+          <br></br><br></br>
+          <span>&#169;2017 The National Association of REALTORS&#174;.</span>
+        </div>
+        </div>
         </div>
      </footer>
      </div>
