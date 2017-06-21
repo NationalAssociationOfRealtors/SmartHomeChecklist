@@ -4,6 +4,7 @@ import _ from 'lodash';
 import PropertyUtils from '../utils/PropertyUtils'
 import ProductUtils from '../utils/ProductUtils'
 import logo from '../images/checkbox.svg';
+import nar_logo from '../images/master-logo.png'
 import '../styles/main.css';
 import icons from '../icons.js';
 
@@ -25,7 +26,7 @@ class App extends Component {
       if (e.name == 'QuotaExceededError') {
         alert('Please quit out of Private Browsing mode');
       } else {
-        throw e; 
+        throw e;
       }
     }
 
@@ -167,21 +168,44 @@ class App extends Component {
         <div className="App-loading">Loading...</div>
       );
     }
-
     return (
       <div>
-        <div className="App-logo">
-          <div className="container">
-            <Link to="/"><img src={logo} alt="Smart Home Checklist" width="54" /></Link>
-            <div className="logo-text">
-              <h1>Smart Home Checklist</h1>
-              <span>Transfer ownership of smart devices wisely</span>
-            </div>
+      <header className="App-logo">
+        <div className="container">
+          <Link to="/"><img src={logo} alt="Smart Home Checklist" width="54" /></Link>
+          <div className="logo-text">
+            <h1>Smart Home Checklist</h1>
+            <span>Transfer ownership of smart devices wisely</span>
           </div>
         </div>
-
-        {content}
-      </div>
+      </header>
+      {content}
+      <div className="footer">
+      <footer className="App-footer">
+        <div className="container">
+        <div className="wrapper">
+        <div className="left">
+          <ul>
+            <li><Link to={`/`}>HOME</Link></li>
+            <li><a href="https://crtlabs.org/about">ABOUT</a></li>
+            <li><a href="mailto:feedback@crtlabs.org?Subject=Smart%20Home%20Checklist%20Feedback">FEEDBACK</a></li>
+            <li><Link to={`terms`}>TERMS OF USE</Link></li>
+            <li><Link to={`privacy`}>PRIVACY POLICY</Link></li>
+            </ul>
+        </div>
+        <div className="right">
+          <Link to="/"><img src={nar_logo} alt="National Association of Realtors" width="200" /></Link>
+        </div>
+        <div className="bottom">
+          <span>Designed and built by CRT Labs, the technology research and development center of the National Association of REALTORS&#174;.</span>
+          <br></br><br></br>
+          <span>&#169;2017 The National Association of REALTORS&#174;.</span>
+        </div>
+        </div>
+        </div>
+     </footer>
+     </div>
+     </div>
     );
   }
 }
