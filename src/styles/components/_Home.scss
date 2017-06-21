@@ -6,12 +6,13 @@
 .Home-properties {
   border-top: 1px solid #c29dd5;
   margin-top: 3em;
+  padding-bottom: 40px;
   .property {
     padding: 1em 1em 0 1em;
     line-height: 1.3;
     a {
       font-size: 1.25em;
-      font-weight: bold;
+      border-bottom: 3px solid #9ccc65;
     }
   }
 }

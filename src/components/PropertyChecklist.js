@@ -17,37 +17,9 @@ class PropertyChecklist extends Component {
   // After the component has mounted checks if needs to perform fadeout action
   componentDidMount() {
     if (this.shouldDisplayAlert()) {
-      this.fadeOut( document.getElementById("alert"), 1500 );
+      setTimeout(function(){document.getElementById("alert").style.display = "none";}, 1500);
     }
   }
-  // Will take in the element and deplay time in ms to perform the fade out
-  fadeOut(elem,ms) {
-    if(!elem) return;
-    if(ms) {
-      // Run an interval timer to fade out the element in params
-      var opacity = 1;
-      var timer = setInterval( function() {
-        opacity -= 50 / ms;
-        if(opacity <= 0)
-        {
-          clearInterval(timer);
-          opacity = 0;
-          // Removes the element
-          elem.style.display = "none";
-          elem.style.visibility = "hidden";
-        }
-        elem.style.opacity = opacity;
-        elem.style.filter = "alpha(opacity=" + opacity * 100 + ")";
-      }, 50 );
-    } else {
-      // Removes the element
-      elem.style.opacity = 0;
-      elem.style.filter = "alpha(opacity=0)";
-      elem.style.display = "none";
-      elem.style.visibility = "hidden";
-    }
-  }
-
   // When a product is added to a list, user is redirected with query string ?saved=1
   shouldDisplayAlert() {
     const {saved} = querystring.parse(window.location.search.substr(1));
@@ -81,7 +53,7 @@ class PropertyChecklist extends Component {
       <div className="PropertyChecklist-container">
         {this.shouldDisplayAlert() &&
           <div className="container">
-            <div id="alert" className="alert" onClick={() => this.hideAlert()}>
+            <div id="alert" className="alert fade-out" onClick={() => this.hideAlert()}>
               Device successfully added
             </div>
           </div>
