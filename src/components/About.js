@@ -19,7 +19,7 @@ class About extends Component {
       <br></br><br></br>
       The Smart Home Checklist makes it easy to create an inventory of smart home devices, and it provides resources (provided by our content partner Smart Home DB (smarthomedb.com) to help you manage those devices.
       <br></br><br></br>
-      Read our <Link to={`privacy`}>privacy policy</Link> and <Link to={`privacy`}>terms of use</Link>.
+      Read our <Link to={`privacy`}>privacy policy</Link> and <Link to={`terms`}>terms of use</Link>.
       <br></br><br></br>
       Send us <a href="mailto:feedback@crtlabs.org?Subject=Smart%20Home%20Checklist%20Feedback">feedback</a>.
       </p>
