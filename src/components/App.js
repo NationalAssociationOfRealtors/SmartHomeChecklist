@@ -187,7 +187,7 @@ class App extends Component {
         <div className="left">
           <ul>
             <li><Link to={`/`}>HOME</Link></li>
-            <li><a href="https://crtlabs.org/about">ABOUT</a></li>
+            <li><Link to={`about`}>ABOUT</Link></li>
             <li><a href="mailto:feedback@crtlabs.org?Subject=Smart%20Home%20Checklist%20Feedback">FEEDBACK</a></li>
             <li><Link to={`terms`}>TERMS OF USE</Link></li>
             <li><Link to={`privacy`}>PRIVACY POLICY</Link></li>
