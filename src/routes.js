@@ -13,6 +13,7 @@ import PropertyProduct from './components/PropertyProduct';
 import ReceiveProperty from './components/ReceiveProperty';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
+import About from './components/About';
 
 const Routes = (props) => (
   <Router {...props}>
@@ -20,6 +21,7 @@ const Routes = (props) => (
       <IndexRoute component={Home} />
       <Route path="/privacy" component={Privacy}></Route>
       <Route path="/terms" component={Terms}></Route>
+      <Route path="/about" component={About}></Route>
       <Route path="/property/:propertyId" component={PropertyWrapper} >
         <IndexRoute component={PropertyChecklist} />
         <Route path="/property/:propertyId/productGroups" component={PropertyProductGroups} />
