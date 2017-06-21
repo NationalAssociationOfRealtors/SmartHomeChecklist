@@ -1,14 +1,34 @@
-body, html {
-  font-size: 100%;
-  min-height: 100%;
-  padding: 0;
-  margin: 0;
+html {
+  box-sizing: border-box;
+  height: 100%;
 }
-
 body {
-  @include vertical-gradient(#6a1b9a, #a43ab7);
+  background: -webkit-gradient(linear, left top, left bottom, from(#6a1b9a), to(#a43ab7)) fixed;
+  background-color: #6a1b9a;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: calc(100% - 45px);
+  background-attachment:fixed;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 100%;
+}
+
+.demo {
+  margin: 0 auto;
+  padding-top: 64px;
+  max-width: 640px;
+  width: 94%;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
 }
 
 a {
@@ -16,15 +36,32 @@ a {
   text-decoration: none;
 }
 
+.content {
+}
+
 .container {
   max-width: 36em;
   overflow: hidden;
   position: relative;
-
   @media (min-width: 40em) {
     margin: 0 auto;
   }
 }
+
+.container-text-body {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  line-height: 30px;
+  p {
+    padding: 10px;
+  }
+  a {
+    color: #6d1c9b;
+    text-decoration: none;
+  }
+}
+
 
 .App-loading, .App-connection-error {
   text-align: center;
@@ -52,7 +89,7 @@ a {
   .logo-text {
     text-align: right;
     float: left;
-    
+
     h1 {
       position: relative;
       top: 0.15em;
@@ -70,3 +107,82 @@ a {
   }
 }
 
+.App-footer {
+  border-top: 1px solid black;
+  background-color: black;
+  position: absolute;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px 16px 5px 0px;
+    text-decoration: none;
+    font-size: 0.6em;
+  }
+  li a:hover {
+    /*color: #9231ae;*/
+  }
+  .img-container {
+    width: 100%;
+    height: 50%;
+    background-color: red;
+  }
+  img {
+    float: right;
+  }
+  .footer-text {
+    text-align: left;
+    h1 {
+      position: relative;
+      top: 0.15em;
+      color: white;
+      font-size: 1.25em;
+      text-transform: uppercase;
+    }
+    span {
+      position: relative;
+      color: #eee;
+      font-size: 0.55em;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 10px 10px 10px 10px;
+      text-decoration: none;
+      font-size: 0.4em;
+    }
+    .footer-text {
+      text-align: center;
+      span {
+        position: relative;
+        color: #eee;
+        font-size: 0.55em;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      img {
+        left: 50%;
+        width: 30%;
+        float:none;
+      }
+    }
+  }
+}

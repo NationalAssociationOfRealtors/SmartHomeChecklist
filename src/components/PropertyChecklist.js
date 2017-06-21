@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 import querystring from 'querystring';
 
-class PropertyChecklist extends Component { 
+class PropertyChecklist extends Component {
   constructor(props) {
     super(props);
 
@@ -10,15 +10,19 @@ class PropertyChecklist extends Component {
       hideAlert: false
     };
   }
-  
+
   componentWillMount() {
     this.preloadImages()
   }
-
+  // After the component has mounted checks if needs to perform fadeout action
+  componentDidMount() {
+    if (this.shouldDisplayAlert()) {
+      setTimeout(function(){document.getElementById("alert").style.display = "none";}, 1500);
+    }
+  }
   // When a product is added to a list, user is redirected with query string ?saved=1
   shouldDisplayAlert() {
     const {saved} = querystring.parse(window.location.search.substr(1));
-
     return !!saved && !this.state.hideAlert;
   }
 
@@ -35,7 +39,7 @@ class PropertyChecklist extends Component {
     property.products.map(id => {
       const image = new Image();
       image.src = products.byId[id].image;
-      
+
       return images.push(image);
     });
 
@@ -49,7 +53,7 @@ class PropertyChecklist extends Component {
       <div className="PropertyChecklist-container">
         {this.shouldDisplayAlert() &&
           <div className="container">
-            <div className="alert" onClick={() => this.hideAlert()}>
+            <div id="alert" className="alert fade-out" onClick={() => this.hideAlert()}>
               Device successfully added
             </div>
           </div>

@@ -7,7 +7,7 @@ import CreatePropertyForm from './CreatePropertyForm';
 class Home extends Component {
   constructor(props) {
     super(props);
-
+    window.scrollTo(0, 0);
     this.state = {
       propertyName: ''
     };
@@ -18,8 +18,8 @@ class Home extends Component {
   }
 
   handlePropertyFormSubmit(event) {
-    event.preventDefault(); 
-    
+    event.preventDefault();
+
     const property = PropertyUtils.newProperty(this.state.propertyName);
 
     this.props.methods.createProperty(property, () => {
@@ -27,14 +27,14 @@ class Home extends Component {
     });
   }
 
-  render() {    
+  render() {
     const properties = this.props.properties;
 
     return (
       <div>
         <div className="container">
           <div className="Home-form-container">
-            <CreatePropertyForm 
+            <CreatePropertyForm
               labelText="Create a new property list"
               helpText="Be mindful – your clients may see this name"
               buttonText="Create"
