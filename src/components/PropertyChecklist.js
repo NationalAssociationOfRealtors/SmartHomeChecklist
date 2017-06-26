@@ -17,7 +17,7 @@ class PropertyChecklist extends Component {
   // After the component has mounted checks if needs to perform fadeout action
   componentDidMount() {
     if (this.shouldDisplayAlert()) {
-      setTimeout(function(){document.getElementById("alert").style.display = "none";}, 1500);
+      setTimeout(function(){document.getElementById("alert").style.display = "none";}, 3000);
     }
   }
   // When a product is added to a list, user is redirected with query string ?saved=1
