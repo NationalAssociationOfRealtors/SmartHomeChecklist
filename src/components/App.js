@@ -24,7 +24,7 @@ class App extends Component {
       localStorage.setObject('test', true);
     } catch (e) {
       if (e.name == 'QuotaExceededError') {
-        alert('Turn off private browsing in order to be able to save and return to your lists.');
+        alert('Turn off private browsing in order to save and view your lists.');
       } else {
         throw e;
       }
