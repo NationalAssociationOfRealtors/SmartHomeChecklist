@@ -10,7 +10,8 @@
 
   @-webkit-keyframes fade-out {
     0% { opacity: 1; -webkit-transform: scale(1);}
-    85% {opacity: 0; -webkit-transform: scale(1);}
+    75% {opacity: 0.8; -webkit-transform: scale(1);}
+    85% {opacity: 0.5; -webkit-transform: scale(1);}
     100% {opacity: 0; -webkit-transform: scale(.1); opacity: 0;}
   }
 
