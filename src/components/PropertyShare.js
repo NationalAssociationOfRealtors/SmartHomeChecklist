@@ -27,7 +27,7 @@ class PropertyShare extends Component {
     const {property} = this.props;
     const email = this.state.email;
 
-    return `mailto:${email}?subject=${escape(`Smart Home Checklist for ${property.name}`)}&body=Below you’ll find a link to an inventory of smart home devices that was prepared for you using the Smart Home Checklist, a free service from CRT Labs and the National Association of REALTORS®. It’s important to transfer control and ownership of the smart home devices that are part of a real estate transaction. The Smart Home Checklist will help you do that. Simply click on the link below to view the checklist, and then click on each smart device to access reset instructions, FAQ, smart home playbooks and other information. ${escape(this.shareUrl())}`;
+    return `mailto:${email}?subject=${escape(`Smart Home Checklist for ${property.name}`)}&body=Click on the link below to access an inventory of smart home devices that was prepared for you. Click on each smart device to access reset instructions, FAQs, smart home playbooks and other information. ${escape(this.shareUrl())}`;
   }
 
   onFocus() {
