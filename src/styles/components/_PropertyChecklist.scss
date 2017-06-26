@@ -10,18 +10,18 @@
 
   @-webkit-keyframes fade-out {
     0% { opacity: 1; -webkit-transform: scale(1);}
-    85% {opacity: 0; -webkit-transform: scale(1.05);}
+    85% {opacity: 0; -webkit-transform: scale(1);}
     100% {opacity: 0; -webkit-transform: scale(.1); opacity: 0;}
   }
 
   .fade-out {
     -webkit-animation-delay: .5s;
-    -webkit-animation: fade-out 1s ease-in;
+    -webkit-animation: fade-out 3s ease-in;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-iteration-count: 1;
     opacity: 1;
   }
-  
+
   .PropertyChecklist-products {
     overflow: hidden;
     margin: 1em;
